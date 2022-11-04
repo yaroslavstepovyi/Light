@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+
+.values {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  /* background: rgba(9, 1, 14, 1); */
+}
+
+.values__wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  max-width: 447px;
+  margin-top: 44px;
+}
+
+.values__left {
+  width: 50%;
+}
+
+.values__left h3 {
+  display: flex;
+  font-family: Orbitron;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18.817px;
+  line-height: 24px;
+  letter-spacing: -0.02em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  gap: 2px;
+  max-width: 224px;
+  color: rgb(255, 255, 255);
+}
+
+.values__left h3:after {
+  content: "";
+  position: relative;
+  background-image: url(../../../Assets/icons/hearts.svg);
+  width: 23px;
+  height: 18px;
+  right: 148px;
+  bottom: -27px;
+}
+
+.values__left-paragraph {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.02em;
+  max-width: 250px;
+  margin-top: 0;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.values__right {
+  display: flex;
+  text-align: center;
+  gap: 6px;
+}
+
+.values__right-benefits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.values__right-benefits p {
+  margin: 0;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 7.29569px;
+  line-height: 9px;
+  letter-spacing: 0.03em;
+  margin-bottom: 5px;
+  color: #fff;
+}

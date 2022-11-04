@@ -1,0 +1,82 @@
+.experience {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  align-items: center;
+  background: rgba(1, 2, 8, 1);
+}
+
+.experience__photos {
+  display: flex;
+  justify-content: flex-start;
+  gap: 18px;
+}
+
+.experience__photo1 {
+  width: 205px;
+  height: 301px;
+  margin-top: 28px;
+  margin-bottom: 152px;
+}
+
+.experience__photo2 {
+  width: 206px;
+  height: 277px;
+  margin-top: 144px;
+  margin-bottom: 60px;
+}
+
+.experience__content {
+  width: 100%;
+  max-width: 234px;
+  margin-top: 201px;
+}
+
+.experience__content-headline {
+  margin-top: 0;
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20.8496px;
+  line-height: 33px;
+  margin-bottom: 21px;
+  color: #fff;
+}
+
+.experience__content-paragraph {
+  margin-top: 0;
+  margin-bottom: 21px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.experience__content-btn {
+  margin: 0;
+  width: 92px;
+  height: 33px;
+  left: 579px;
+  top: 949px;
+  background: linear-gradient(
+    99.99deg,
+    #b936f5 -21.45%,
+    #c64c85 100%,
+    #f1005b 100%
+  );
+  border-radius: 4px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.experience__content-btn:hover {
+  background: linear-gradient(rgb(192, 51, 223), rgb(185, 53, 123));
+}

@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron&display=swap");
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    rgba(1, 2, 8, 1),
+    rgba(1, 2, 6, 1),
+    rgba(4, 0, 8, 1),
+    rgba(1, 1, 1, 1),
+    rgba(1, 1, 1, 1),
+    rgba(1, 1, 1, 1),
+    rgba(1, 1, 1, 1)
+  );
+}
+
+.content__radius-left {
+  position: absolute;
+  top: 150px;
+  left: 0;
+  width: 34px;
+  height: 645px;
+  background: url(../../../../../Assets/icons/Games/games-left-radius.svg) no-repeat;
+}
+
+.content__radius-right {
+  position: absolute;
+  top: 150px;
+  right: 0;
+  width: 34px;
+  height: 645px;
+  background: url(../../../../../Assets/icons/Games/games-right-radius.svg) no-repeat;
+}
+
+.content__grid {
+  display: grid;
+  grid-template-columns: 228px 228px 228px;
+  column-gap: 39px;
+  row-gap: 20px;
+}
+
+.content__grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 228px;
+}
+
+.content__grid-item-img {
+  width: 100%;
+  height: 100%;
+  max-width: 227px;
+  max-height: 63px;
+  cursor: pointer;
+}
+
+.content__grid-item-description {
+  display: flex;
+  padding: 10px 8px;
+  gap: 19px;
+  /* justify-content: space-between; */
+  width: 100%;
+  background: rgba(185, 54, 245, 0.25);
+  backdrop-filter: blur(55.35px);
+  border-radius: 0px 0px 0px 4.8638px;
+}
+
+.content__grid-item-description-left {
+  width: 100%;
+  max-width: 94px;
+  gap: 6px;
+}
+
+.content__grid-item-description-right {
+  width: 100%;
+  max-width: 97px;
+}
+
+.content__grid-item-description-left h3 {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 7.29569px;
+  line-height: 9px;
+  text-decoration-line: underline;
+  color: #ffffff;
+}
+
+.content__grid-item-description-left span,
+.content__grid-item-description-left p {
+  width: 100%;
+  max-width: 94px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 7.29569px;
+  line-height: 9px;
+  letter-spacing: -0.02em;
+  text-decoration-line: underline;
+  color: #efdede;
+}
+
+.content__grid-item-description-right h3 {
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 7.29569px;
+  line-height: 9px;
+  text-decoration-line: underline;
+  color: #ffffff;
+}
+
+.content__grid-item-description-right span,
+.content__grid-item-description-right p {
+  width: 100%;
+  max-width: 94px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 7.29569px;
+  line-height: 9px;
+  letter-spacing: -0.02em;
+  text-decoration-line: underline;
+  color: #efdede;
+}

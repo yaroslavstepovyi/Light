@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./Users.css">
+    <link rel="stylesheet" href="./reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+
+    <header class="header">
+        <div class="header__radius"></div>
+        <a href="../../../../index.html"><img class="header__logo" src="../../../Assets/icons/logo.svg" alt="logo"/></a>
+        <div class="header__nav">
+            <div class="header__nav-wrap">
+            <ul class="header__links">
+                <li class="header__link"><a href="../../../../index.html">Home</a></li>
+                <li class="header__link"><a href="../index.html">Games</a></li>
+                <li class="header__link"><a href="">Users</a></li>
+            </ul>
+            </div>  
+            <div class="header__nav-wrap-btn">
+            <button class="header__nav-btn" onclick="openDialog" type="submit">Sign In</button>
+            </div>
+        </div>
+        <button class="header__nav-small"></button>
+        </header>
+
+        <main>
+            <section class="users">
+                <div class="users__filter">
+                        <div class="users__filter__wrap">
+                          <div class="users__filter__logo-wrap">
+                            <div class="users__filter__logo">
+                              <h3>VR Users</h3>
+                            </div>
+                          </div>
+                          <div class="users__filter__search">
+                            <!-- <button class="users__filter__search-btn" type="submit">Add new card</button> -->
+                            <div class="users__filter__search-box">
+                              <select >
+                                <option value="" Selected disabled>Sort By Role</option>
+                                <option class="users__filter__search-option" vlaue="txt">admin</option>
+                                <option class="users__filter__search-option" vlaue="txt">moderator</option>
+                                <option class="users__filter__search-option" vlaue="txt">user</option>
+                              </select>
+                              <span class="users__filter__search-box-arrow"></span>
+                            </div>
+                          </div>
+                        </div>
+                </div>
+                <div class="users__datas">
+                  <div class="users__datas-wrap">
+                    <table class="users__datas-table">
+                      <tbody>
+                          <tr>
+                              <th>Avatar</th>
+                              <th>Name</th>
+                              <th>Country</th>
+                              <th>Age</th>
+                              <th>Email</th>
+                              <th>Role</th>
+                              <th>Actions</th>
+                          </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                          </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                          </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                          </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                          </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                          </tr>
+                      </tbody>
+                  </table>
+                  </div>
+                </div>
+            </section>
+
+            <section class="pagination">
+                <div class="pagination__list">
+                  <ul>
+                    <li class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowLeft.svg" alt="" /></button></li>
+                    <li class="pagination__list-btn"><button>1</button></li>
+                    <li class="pagination__list-btn"><button>2</button></li>
+                    <li class="pagination__list-btn"><button><img src="../../../Assets/icons/num.svg" alt=""></button></li>
+                    <li class="pagination__list-btn"><button>9</button></li>
+                    <li class="pagination__list-btn"><button>10</button></li>
+                    <li class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowRight.svg" alt=""></button></li>
+                  </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer__wrap">
+              <div class="footer__headline">
+                <h3>Explore product in new way</h3>
+                <p>
+                  We specialize in creating visual identities for products and
+                  branda in your company.
+                </p>
+              </div>
+              <div class="footer__search">
+                <input class="footer__search__enter-box" type="email" placeholder="Your Email"/>
+                <button class="footer__search__btn" type="submit"> Start </button>
+              </div>
+            </div>
+          </footer>
+    </div>
+</body>
+</html>
+
+<style>
+    *, *::after, *::before {
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #010208 16.39%, #010206 20.51%, #040008 24.79%, #010101 30.46%, #010101 34.11%, #010101 36.21%, #010101 100%);
+}
+</style>

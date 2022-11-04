@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Orbitron&display=swap");
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(9, 1, 14, 1);
+}
+
+.footer__radius-left {
+  position: absolute;
+  width: 367.19px;
+  height: 225.25px;
+  left: 0;
+  top: 1536px;
+  background: url(../../Assets/icons/footer__radius-left.svg) no-repeat;
+}
+
+.footer__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 769px;
+  background-image: url(../../Assets/images/footer-bgr.png);
+  mix-blend-mode: difference;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  mix-blend-mode: difference;
+  border-radius: 0px 7.32242px 7.32242px 0px;
+  padding-top: 28px;
+  padding-bottom: 18px;
+  margin-top: 24px;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.footer__headline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer__headline h3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 284px;
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: -0.02em;
+  margin-top: 28px;
+  margin-bottom: 26px;
+  color: #fff;
+}
+
+.footer__headline p {
+  width: 100%;
+  max-width: 346px;
+  margin-top: 0;
+  margin-bottom: 22px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 10px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer__search {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 27px;
+}
+
+.footer__search__enter-box {
+  width: 156px;
+  height: 18px;
+  background: linear-gradient(
+    rgba(185, 54, 245, 0.1375),
+    rgba(185, 54, 245, 0.11),
+    rgba(170, 20, 240, 0.0825)
+  );
+  border: 1px solid transparent;
+  backdrop-filter: blur(6.07974px);
+  color: #fff;
+  padding-left: 10px;
+  border-radius: 2px;
+  font-family: "Inter";
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 7px;
+  line-height: 11px;
+}
+
+.footer__search__btn {
+  font-family: "Inter";
+  font-weight: 700;
+  font-size: 7px;
+  line-height: 8px;
+  padding: 7px 21px;
+  text-align: center;
+  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.footer__search__btn:hover {
+  background: linear-gradient(rgb(192, 51, 223), rgb(185, 53, 123));
+}

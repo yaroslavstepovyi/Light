@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  align-items: center;
+  background: rgba(1, 2, 8, 1);
+}
+
+.hero__radius-left {
+  position: absolute;
+  left: 0;
+  top: 400px;
+  width: 400px;
+  height: 786px;
+  background: url(../../../Assets/icons/hero-radius-left.svg) no-repeat;
+} 
+
+.hero__radius-right {
+  position: absolute;
+  top: 305px;
+  right: 0;
+  width: 34px;
+  height: 786px;
+  background: url(../../../Assets/icons/hero-radius-right.svg) no-repeat;
+}
+
+.hero__left {
+  width: 50%;
+}
+
+.hero_left-headline {
+  margin-top: 117px;
+  margin-bottom: 18px;
+  width: 100%;
+  max-width: 333px;
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 31.6914px;
+  line-height: 43px;
+  color: #fff;
+}
+
+.hero_left-paragraph {
+  width: 100%;
+  max-width: 312px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  margin-top: 0;
+  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero__left-btns {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  width: 100%;
+  gap: 18px;
+  list-style: none;
+}
+
+.hero__left-btn {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: center;
+  padding: 12px 9px;
+  background: linear-gradient(
+    99.99deg,
+    #b936f5 -21.45%,
+    #c64c85 100%,
+    #f1005b 100%
+  );
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.hero__left-btn:hover {
+  background: linear-gradient(rgb(192, 51, 223), rgb(185, 53, 123));
+}
+
+.hero__left-text {
+  text-decoration: none;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11.0622px;
+  line-height: 13px;
+  color: #ffffff;
+}
+
+.hero__left-people {
+  display: flex;
+  align-items: center;
+  padding: 36px 5px;
+  gap: 16px;
+}
+
+.hero__left-icons {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+}
+
+.hero__left-icons li {
+  list-style: none;
+}
+
+.hero__left-icon {
+  margin-left: -5px;
+}
+
+.hero__left-online {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 10.0078px;
+  line-height: 12px;
+  color: #ffffff;
+}
+
+.hero__left-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.hero__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 497px;
+  max-width: 421px;
+  background: url(../../../Assets/images/ellipse-grl.png) no-repeat center /
+    cover;
+}
+
+.hero__right-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 310px;
+  top: 150px;
+}
+
+.hero__right-headline {
+  text-align: center;
+  font-family: "Orbitron";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 19.5916px;
+  line-height: 25px;
+  color: #fff;
+}
+
+.hero__right-line:after {
+  content: "";
+  display: block;
+  width: 150px;
+  border-bottom: 2px solid #fff;
+}
+
+.hero__right-paragraph {
+  text-align: center;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.0622px;
+  line-height: 13px;
+  color: #fff;
+  width: 204px;
+  text-align: center;
+  margin-top: 23px;
+  margin-bottom: 61px;
+}

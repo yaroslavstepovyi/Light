@@ -1,0 +1,302 @@
+.sign-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+  width: 100%;
+  max-width: 560px;
+  background: #0e0e0e;
+  border-radius: 6px;
+  gap: 14px;
+}
+
+.sign-in__wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 560px;
+  gap: 14px;
+}
+
+.sign-in__headline {
+  width: 100%;
+  max-width: 560px;
+  height: 64px;
+  background: rgba(83, 70, 134, 1);
+  border: 0px solid transparent;
+  border-radius: 0px 64px 0px 0px;
+}
+
+.sign-in__headline h3 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 32px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  color: #fff;
+}
+
+.sign-in__wrap form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 100%;
+  gap: 16px;
+}
+
+.sign-in__inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sign-in__form-inpt {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  padding-left: 32px;
+  width: 522px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #fff;
+  background: #000000;
+  border: 2px solid #c8d1e6;
+  border-radius: 5px;
+}
+
+.sign-in__form-btn {
+  display: flex;
+  padding: 6px 12px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  border-radius: 6px;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.sign-in__form-btn:hover {
+  background: linear-gradient(99.05deg, #d83cd5 0.07%, #c54b4d 106.32%);
+}
+
+@media (max-width: 1200px) {
+  .sign-in {
+    max-width: 590px;
+  }
+
+  .sign-in__wrap {
+    gap: 14px;
+  }
+
+  .sign-in__wrap form {
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+
+  .sign-in__headline h3 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .sign-in__form-inpt {
+    width: 522px;
+    height: 31px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 18px;
+  }
+
+  .sign-in__form-btn {
+    padding: 6px 12px;
+    width: 100%;
+    max-width: 75px;
+    max-height: 37px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .sign-in {
+    max-width: 484px;
+  }
+
+  .sign-in__wrap {
+    gap: 14px;
+  }
+
+  .sign-in__wrap form {
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+
+  .sign-in__headline h3 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .sign-in__form-inpt {
+    width: 446px;
+    height: 31px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 17px;
+  }
+
+  .sign-in__form-btn {
+    padding: 6px 12px;
+    width: 100%;
+    max-width: 75px;
+    max-height: 37px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+@media (max-width: 921px) {
+  .sign-in {
+    max-width: 408px;
+  }
+
+  .sign-in__wrap {
+    gap: 14px;
+  }
+
+  .sign-in__wrap form {
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+
+  .sign-in__headline h3 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .sign-in__form-inpt {
+    width: 372px;
+    height: 31px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    font-size: 17px;
+  }
+
+  .sign-in__form-btn {
+    padding: 6px 12px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 21px;
+    width: 100%;
+    max-width: 71px;
+    max-height: 36px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sign-in {
+    max-width: 408px;
+  }
+
+  .sign-in__wrap {
+    gap: 14px;
+  }
+
+  .sign-in__wrap form {
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+
+  .sign-in__headline h3 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .sign-in__form-inpt {
+    width: 372px;
+    height: 31px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .sign-in__form-btn {
+    padding: 6px 12px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 21px;
+    width: 100%;
+    max-width: 71px;
+    max-height: 36px;
+  }
+}
+
+@media (min-width: 390px) and (max-width: 450px) {
+  .sign-in{
+    max-width: 348px;
+  }
+
+  .sign-in__wrap {
+    gap: 14px;
+  }
+
+  .sign-in__wrap form {
+    margin-bottom: 16px;
+    gap: 16px;
+  }
+
+  .sign-in__headline h3 {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 16px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .sign-in__form-inpt {
+    width: 312px;
+    height: 31px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .sign-in__form-btn {
+    padding: 6px 12px;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 21px;
+    width: 100%;
+    max-width: 71px;
+    max-height: 33px;
+  }
+}
