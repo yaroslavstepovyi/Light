@@ -23,10 +23,20 @@
             </ul>
           </div>  
           <div class="header__nav-wrap-btn">
-            <button class="header__nav-btn" onclick="openDialog" type="submit">Sign In</button>
+            <button class="header__nav-btn"  type="submit">Sign In</button>
           </div>
         </div>
-        <button class="header__nav-small"></button>
+
+        <!-- <div class="header__nav-mobile">
+          <ul class="header__links">
+            <li class="header__link"><a href="">Home</a></li>
+            <li class="header__link"><a href="./src/Components/pages/index.html">Games</a></li>
+            <li class="header__link"><a href="./src/Components/pages/Users Page/Users.html">Users</a></li>
+            <li> <button class="header__nav-btn" type="submit">Sign In</button></li>
+          </ul>
+        </div> -->
+
+        <button onclick="toggleNavigBtn()" class="header__nav-small"></button>
       </header>
 
       <main>
@@ -162,14 +172,12 @@
           <div class="comments__radius-center"></div>
           <div class="comments__radius-left"></div>
           <div class="comments__wrap">
-            <div class="comments__headline">
-              <h3 class="comments__headline-head">What our clients say</h3>
+            <h3 class="comments__headline-head">What our clients say</h3>
               <p class="comments__headline-content">
                 See what our customer say about us. It really matter for us. How
                 good or badwe will make ir for evaluation to make EhyalLive
                 better.
               </p>
-            </div>
             <div class="comments__stars">
               <ul class="comments__stars-list">
                 <li class="comments__stars-item">
@@ -233,10 +241,7 @@
         <section class="values">
           <div class="values__wrap">
             <div class="values__left">
-              <div class="values__left-headline">
-                <h3>Our company values culture</h3>
-                <!-- <img src="./SRC/Assets/icons/hearts.svg" alt="hearts" /> -->
-              </div>
+              <h3>Our company values culture</h3>
               <p class="values__left-paragraph">
                 We specialize in creating visual identities for products and
                 branda in your company.
@@ -276,7 +281,6 @@
           </div>
         </section>
       </main>
-
       <footer class="footer">
         <div class="footer__radius-left"></div>
         <div class="footer__wrap">

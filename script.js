@@ -1,0 +1,11 @@
+const headerNavMobile = document.querySelector(".header__nav-mobile");
+
+const toggleNavigBtn = () => {
+    if (headerNavMobile.style.display === "none")
+    {
+        headerNavMobile.style.display = "flex";
+    }else 
+    {
+        headerNavMobile.style.display = "none";
+    }
+}

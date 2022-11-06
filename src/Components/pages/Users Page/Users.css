@@ -317,12 +317,13 @@
 }
 
 .users__btn-dots {
+  padding: 8px 20px;
   background: transparent;
   border-color: transparent;
   cursor: pointer;
 }
 
-.users__datas-dots:hover {
+.users__btn-dots:hover {
   filter: invert(58%) sepia(100%) saturate(7480%) hue-rotate(280deg)
     brightness(96%) contrast(110%);
 }
@@ -339,7 +340,7 @@
 
 .users__datas-table td {
   vertical-align: middle;
-  padding-bottom: 28px;
+  /* padding-bottom: 28px; */
 }
 
 .users__datas-table td span {
@@ -368,7 +369,7 @@
 }
 
 .pagination__list-btn button {
-  padding: 7px 4px;
+  padding: 6px 4px;
   width: 32px;
   height: 32px;
   background: #ffffff;
@@ -383,7 +384,7 @@
 }
 
 .pagination__list-btn:first-child button {
-  padding: 7px 4px;
+  padding: 6px 4px;
   width: 32px;
   height: 32px;
   background: #919eab;
@@ -425,15 +426,15 @@
   align-items: center;
 }
 
-.footer__radius-left {
+/* .footer__radius-left {
   position: absolute;
   width: 367px;
   height: 225px;
   left: 0;
   top: 1536px;
-  background: url(../../../Assets/icons/footer__radius-left.svg) no-repeat;
+  background: url(../../Assets/icons/footer__radius-left.svg) no-repeat;
   z-index: -1;
-}
+} */
 
 .footer__wrap {
   display: flex;
@@ -455,13 +456,13 @@
   flex-direction: column;
   align-items: center;
   margin-top: 67px;
-  gap: 16px;
 }
 
 .footer__headline h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 16px;
   width: 100%;
   max-width: 371px;
   font-weight: 700;
@@ -484,7 +485,7 @@
 .footer__search {
   display: flex;
   align-items: center;
-  margin-bottom: 62px;
+  margin-bottom: 68px;
   width: 100%;
   max-width: 252px;
   gap: 12px;
@@ -494,13 +495,15 @@
   max-width: 175px;
   height: 36px;
   padding-left: 8px;
+  font-family: "Poppins";
+  font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
   color: rgba(255, 255, 255, 0.56);
   background: rgba(224, 163, 201, 0.56);
   border-radius: 8px 0px 0px 8px;
-  border: 0px solid transparent;
+  border: none;
 }
 
 .footer__search__btn {
@@ -702,7 +705,7 @@
 
   .footer__headline {
     margin-top: 5px;
-    gap: 10px;
+
   }
 
   .footer__headline h3 {
@@ -922,7 +925,6 @@
 
   .footer__headline {
     margin-top: 5px;
-    gap: 10px;
   }
 
   .footer__headline h3 {
@@ -1127,13 +1129,22 @@
 
   /* footer */
 
+  .footer__radius-left {
+    display: none;
+  }
+
   .footer__wrap {
+    padding-top: 5px;
+ 
+    background-image: url(../../../Assets/icons/footer-mobile.svg);
+    mix-blend-mode: difference;
+    border-radius: 8px;
     gap: 10px;
   }
 
   .footer__headline {
-    margin-top: 5px;
-    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
   }
 
   .footer__headline h3 {
@@ -1144,33 +1155,52 @@
 
   .footer__headline p {
     font-weight: 400;
-    font-size: 11px;
+    font-size: 10px;
     line-height: 11px;
+    color: rgba(255, 255, 255, 0.85);
     max-width: 253px;
   }
 
   .footer__search {
-    width: 100%;
-    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
   }
 
   .footer__search__enter-box {
+    display: flex;
+    padding: 16.5px 8px;
     width: 100%;
     max-width: 175px;
     max-height: 33px;
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
-    color: rgba(224, 163, 201, 0.56);
-    line-height: 12px;
+    color: rgba(255, 255, 255, 0.56);
+    background: rgba(224, 163, 201, 0.56);
+    box-shadow: inset 0px -9.72759px 16.2127px rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(6.07974px);
+    border-radius: 8px 0px 0px 8px;
   }
 
   .footer__search__btn {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 60px;
+    max-height: 33px;
+    padding: 6px 12px;
     font-weight: 700;
     font-size: 14px;
     line-height: 21px;
-    padding: 4px 10px;
-    max-width: 60px;
-    max-height: 33px;
+    color: #f4f9fe;
+    background: linear-gradient(99.99deg, #B936F5 -21.45%, #C64C85 100%, #F1005B 100%);
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  .footer__headline p {
+    width: 100%;
+    max-width: 253px;
   }
 }
