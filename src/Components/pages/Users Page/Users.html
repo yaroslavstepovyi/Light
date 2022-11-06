@@ -12,23 +12,32 @@
 <body>
     <div class="container">
 
-    <header class="header">
+      <header class="header">
         <div class="header__radius"></div>
         <a href="../../../../index.html"><img class="header__logo" src="../../../Assets/icons/logo.svg" alt="logo"/></a>
         <div class="header__nav">
-            <div class="header__nav-wrap">
+          <div class="header__nav-wrap">
             <ul class="header__links">
-                <li class="header__link"><a href="../../../../index.html">Home</a></li>
-                <li class="header__link"><a href="../index.html">Games</a></li>
-                <li class="header__link"><a href="">Users</a></li>
+              <li class="header__link"><a href="../../../../index.html">Home</a></li>
+              <li class="header__link"><a href="../index.html">Games</a></li>
+              <li class="header__link"><a href="./Users.html">Users</a></li>
             </ul>
-            </div>  
-            <div class="header__nav-wrap-btn">
-            <button class="header__nav-btn" onclick="openDialog" type="submit">Sign In</button>
-            </div>
+          </div>  
+          <div class="header__nav-wrap-btn">
+            <button class="header__nav-btn"  type="submit">Sign In</button>
+          </div>
         </div>
-        <button class="header__nav-small"></button>
-        </header>
+        <div class="header__nav-mobile">
+          <ul class="header__links">
+            <li class="header__link"><a href="../../../../index.html">Home</a></li>
+            <li class="header__link"><a href="../index.html">Games</a></li>
+            <li class="header__link"><a href="./Users.html">Users</a></li>
+            <li> <button class="header__nav-btn" type="submit">Sign In</button></li>
+          </ul>
+        </div> 
+        <button onclick="toggleNavigBtn()" class="header__nav-small"></button>
+
+      </header>
 
         <main>
             <section class="users">
@@ -148,6 +157,7 @@
             </div>
           </footer>
     </div>
+    <script src="./Users.js"></script>
 </body>
 </html>
 

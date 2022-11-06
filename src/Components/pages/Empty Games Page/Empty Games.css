@@ -267,6 +267,10 @@
   border: 0px solid transparent;
 }
 
+.footer__search__enter-box::placeholder{
+  color: rgba(255, 255, 255, 0.56);
+}
+
 .footer__search__btn {
   width: 100%;
   height: 100%;
