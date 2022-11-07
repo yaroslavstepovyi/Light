@@ -1,5 +1,5 @@
 const headerNavMobile = document.querySelector(".header__nav-mobile");
-const container = document.querySelector(".container");
+const headerLinks = document.querySelector(".header__links");
 
 const toggleNavigBtn = () => {
     if (headerNavMobile.style.display === "none")

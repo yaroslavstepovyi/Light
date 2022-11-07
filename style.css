@@ -1213,7 +1213,7 @@
   }
 
   .header__nav-mobile {
-    display: flex;
+    display: none;
     flex-direction: column;
     left: 0;
     top: 0;
@@ -1705,7 +1705,6 @@
 
   .header__nav-small {
     position: relative;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     width: 18px;
@@ -1729,14 +1728,14 @@
   }
 
   .header__nav-mobile {
-    display: flex;
+    display: none;
     flex-direction: column;
     left: 0;
     top: 0;
   }
 
   .header__links {
-    position: fixed;
+    display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
