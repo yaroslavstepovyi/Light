@@ -44,10 +44,10 @@
             </div>
             <div class="sign-in__inputs">
               <form action="">
-                <input class="sign-in__form-inpt" type="text" placeholder="Email" />
-                <input class="sign-in__form-inpt" type="password" placeholder="Password" />
+                <input id="sign-in-email" class="sign-in__form-inpt" type="text" placeholder="Email" />
+                <input id="sign-in-password" class="sign-in__form-inpt" type="password" placeholder="Password" />
             </form>
-            <button class="sign-in__form-btn">Sign In</button>
+            <button type="submit" class="sign-in__form-btn">Sign In</button>
             </div>
           </div>
         </div>
@@ -65,10 +65,27 @@
                     <div class="filter__search-box">
                       <select >
                         <option value="" Selected disabled>Sort By Date</option>
-                        <option class="filter__search-option" vlaue="txt">New first</option>
-                        <option class="filter__search-option" vlaue="txt">New second</option>
+                        <option class="filter__search-option">New first</option>
+                        <option class="filter__search-option">New second</option>
                       </select>
                       <span class="filter__search-box-arrow"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="background-blur hidden-background-blur"></div>
+                <div class="adding modal hidden">
+                  <div class="adding__wrap">
+                    <div class="adding__headline">
+                      <h3>Add New Game</h3>
+                    </div>
+                    <div class="adding__inputs">
+                      <form action="">
+                        <input id="adding-name" class="adding__form-inpt" type="text" , placeholder="Game name" />
+                        <input id="adding-description" class="adding__form-inpt" type="text" , placeholder="Game description" />
+                        <input id="adding-review" class="adding__form-inpt" type="text" , placeholder="Game review" />
+                        <input id="adding-image" class="adding__form-inpt" type="text" , placeholder="Game image" />
+                    </form>
+                    <button type="submit" class="adding__form-btn">Add New Game</button>
                     </div>
                   </div>
                 </div>
@@ -316,10 +333,14 @@
             </div>
           </footer>
     </div>
+
     <script src="./script.js"></script>
     <script type="module" src="../../scripts/categorySelect.js"></script>
     <script type="module" src="../../scripts/footerSearch.js"></script>
     <script type="module" src="../../scripts/signIn.js"></script>
+    <script type="module" src="../../scripts/dialogSignInDatas.js"></script>
+    <script type="module" src="../../scripts/addNewCard.js"></script>
+    <script type="module" src="../../scripts/dialogAddNewCard.js"></script>
 </body>
 </html>
 
