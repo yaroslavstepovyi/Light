@@ -5,9 +5,9 @@ var password = "";
 signInFormBtn.addEventListener("click", () =>{
     var email = document.getElementById("sign-in-email").value;
     var password = document.getElementById("sign-in-password").value;
-    console.log("email:",email, "\n","password:", password);
+    let signInLogInfo = {
+        email: email,
+        password: password, 
+    };
+    console.log(signInLogInfo);
 })
-
-// const login = () =>{
-
-// }
