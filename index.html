@@ -11,7 +11,8 @@
   </head>
   <body>
     <div class="container">
-      <header class="header">
+
+      <header class="header sticky">
         <div class="header__radius"></div>
         <a href="./index.html"><img class="header__logo" src="./src/Assets/icons/logo.svg" alt="logo"/></a>
         <div class="header__nav">
@@ -23,7 +24,7 @@
             </ul>
           </div>  
           <div class="header__nav-wrap-btn">
-            <button class="header__nav-btn"  type="submit">Sign In</button>
+            <button type="submit" class="header__nav-btn">Sign In</button>
           </div>
         </div>
         <div class="header__nav-mobile">
@@ -31,11 +32,26 @@
             <li class="header__link"><a href="./index.html">Home</a></li>
             <li class="header__link"><a href="./src/Components/pages/index.html">Games</a></li>
             <li class="header__link"><a href="./src/Components/pages/Users Page/Users.html">Users</a></li>
-            <li> <button class="header__nav-btn" type="submit">Sign In</button></li>
+            <li><button onclick="togglePreventScrollBtn()" type="submit" class="header__nav-btn">Sign In</button></li>
           </ul>
-        </div> 
+        </div>
         <button onclick="toggleNavigBtn()" class="header__nav-small"></button>
-
+        
+        <div class="background-blur hidden-background-blur"></div>
+        <div class="sign-in modal hidden">
+          <div class="sign-in__wrap">
+            <div class="sign-in__headline">
+              <h3>Authorization</h3>
+            </div>
+            <div class="sign-in__inputs">
+              <form action="">
+                <input class="sign-in__form-inpt" type="text" placeholder="Email" />
+                <input class="sign-in__form-inpt" type="password" placeholder="Password" />
+            </form>
+            <button class="sign-in__form-btn">Sign In</button>
+            </div>
+          </div>
+        </div>
       </header>
 
       <main>
@@ -43,13 +59,11 @@
           <div class="hero__radius-left"></div>
           <div class="hero__radius-right"></div>
           <div class="hero__left">
-            <div class="hero__left-headline">
-              <h3 class="">Let’s Explore<br>Three-Dimensional visual</h3>
+              <h3 class="hero__left-header">Let’s Explore<br>Three-Dimensional visual</h3>
               <p class="hero__left-paragraph">
                 With virtual technology you can see the digital world feel more
                 real and you can play the game with a new style.
               </p>
-            </div>
             <div class="hero__left-submit-user">
               <ul class="hero__left-btns">
                 <li>
@@ -132,9 +146,9 @@
                   alt="MskMan"
                 />
               </div>
-              <button type="submit" class="experience__mobile-btn">
-                Get in Now
-              </button>
+              <!-- <button onclick="visitPage()" type="submit" class="experience__mobile-btn">
+                Get it Now
+              </button> -->
             </div>
              <div class="experience__content">
               <div class="experience__content-wrap">
@@ -147,8 +161,8 @@
                   adventure in this new digital world.
                 </p>
               </div>
-              <button type="submit" class="experience__content-btn">
-                Get in Now
+              <button type="link" onclick="visitPage()" class="experience__content-btn">
+                Get it Now
               </button>
             </div>
           </div>
@@ -191,8 +205,8 @@
                   <div class="comments__stars-item-names">
                     <img src="./SRC/Assets/icons/star1.svg" alt="str1" />
                     <div>
-                      <p>Denny Hilguston</p>
-                      <a>@denny.hill</a>
+                      <p class="comments__stars-item-name">Denny Hilguston</p>
+                      <a class="comments__stars-item-name">@denny.hill</a>
                     </div>
                   </div>
                 </li>
@@ -209,8 +223,8 @@
                   <div class="comments__stars-item-names">
                     <img src="./SRC/Assets/icons/star2.svg" alt="str2" />
                     <div>
-                      <p>Denny Hilguston</p>
-                      <a>@denny.hill</a>
+                      <p class="comments__stars-item-name">Denny Hilguston</p>
+                      <a class="comments__stars-item-name">@denny.hill</a>
                     </div>
                   </div>
                 </li>
@@ -227,8 +241,8 @@
                   <div class="comments__stars-item-names">
                     <img src="./SRC/Assets/icons/star3.svg" alt="str3" />
                     <div>
-                      <p>Denny Hilguston</p>
-                      <a>@denny.hill</a>
+                      <p class="comments__stars-item-name">Denny Hilguston</p>
+                      <a class="comments__stars-item-name">@denny.hill</a>
                     </div>
                   </div>
                 </li>
@@ -297,21 +311,10 @@
         </div>
       </footer>
     </div>
-    <script type="text/javascript", src="./script.js"></script>
+    <script src="./script.js"></script> 
+    <script src="./src/scripts/navigationMobile.js"></script>
+    <script type="module" src="./src/scripts/footerSearch.js"></script>
+    <script type="module" src="./src/scripts/signIn.js"></script>
+    <script type="module" src="./src/scripts/pageElements.js"></script>
   </body>
 </html>
-
-<style>
-  *,
-  *::after,
-  *::before {
-    box-sizing: border-box;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    background: rgba(14, 14, 14, 1);
-  }
-</style>

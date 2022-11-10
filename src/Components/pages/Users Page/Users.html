@@ -37,6 +37,21 @@
         </div> 
         <button onclick="toggleNavigBtn()" class="header__nav-small"></button>
 
+        <div class="background-blur hidden-background-blur"></div>
+        <div class="sign-in modal hidden">
+          <div class="sign-in__wrap">
+            <div class="sign-in__headline">
+              <h3>Authorization</h3>
+            </div>
+            <div class="sign-in__inputs">
+              <form action="">
+                <input class="sign-in__form-inpt" type="text" placeholder="Email" />
+                <input class="sign-in__form-inpt" type="password" placeholder="Password" />
+            </form>
+            <button class="sign-in__form-btn">Sign In</button>
+            </div>
+          </div>
+        </div>
       </header>
 
         <main>
@@ -130,7 +145,7 @@
                 <div class="pagination__list">
                   <ul>
                     <li class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowLeft.svg" alt="" /></button></li>
-                    <li class="pagination__list-btn"><button>1</button></li>
+                    <li class="pagination__list-btn pagination__list-btn--active"><button>1</button></li>
                     <li class="pagination__list-btn"><button>2</button></li>
                     <li class="pagination__list-btn"><button><img src="../../../Assets/icons/num.svg" alt=""></button></li>
                     <li class="pagination__list-btn"><button>9</button></li>
@@ -158,6 +173,8 @@
           </footer>
     </div>
     <script src="./Users.js"></script>
+    <script type="module" src="../../../scripts/categorySelect.js"></script>
+    <script type="module" src="../../../scripts/signIn.js"></script>
 </body>
 </html>
 
