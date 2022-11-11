@@ -7,22 +7,33 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="reset.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-
       <header class="header sticky">
         <div class="header__radius"></div>
-        <a href="./index.html"><img class="header__logo" src="./src/Assets/icons/logo.svg" alt="logo"/></a>
+        <a href="./index.html"
+          ><img
+            class="header__logo"
+            src="./src/Assets/icons/logo.svg"
+            alt="logo"
+        /></a>
         <div class="header__nav">
           <div class="header__nav-wrap">
             <ul class="header__links">
               <li class="header__link"><a href="./index.html">Home</a></li>
-              <li class="header__link"><a href="./src/Components/pages/index.html">Games</a></li>
-              <li class="header__link"><a href="./src/Components/pages/Users Page/Users.html">Users</a></li>
+              <li class="header__link">
+                <a href="./src/Components/pages/index.html">Games</a>
+              </li>
+              <li class="header__link">
+                <a href="./src/Components/pages/Users Page/Users.html">Users</a>
+              </li>
             </ul>
-          </div>  
+          </div>
           <div class="header__nav-wrap-btn">
             <button type="submit" class="header__nav-btn">Sign In</button>
           </div>
@@ -30,13 +41,25 @@
         <div class="header__nav-mobile">
           <ul class="header__links">
             <li class="header__link"><a href="./index.html">Home</a></li>
-            <li class="header__link"><a href="./src/Components/pages/index.html">Games</a></li>
-            <li class="header__link"><a href="./src/Components/pages/Users Page/Users.html">Users</a></li>
-            <li><button onclick="togglePreventScrollBtn()" type="submit" class="header__nav-btn">Sign In</button></li>
+            <li class="header__link">
+              <a href="./src/Components/pages/index.html">Games</a>
+            </li>
+            <li class="header__link">
+              <a href="./src/Components/pages/Users Page/Users.html">Users</a>
+            </li>
+            <li>
+              <button
+                onclick="togglePreventScrollBtn()"
+                type="submit"
+                class="header__nav-btn"
+              >
+                Sign In
+              </button>
+            </li>
           </ul>
         </div>
         <button onclick="toggleNavigBtn()" class="header__nav-small"></button>
-        
+
         <div class="background-blur hidden-background-blur"></div>
         <div class="sign-in modal hidden">
           <div class="sign-in__wrap">
@@ -45,10 +68,24 @@
             </div>
             <div class="sign-in__inputs">
               <form action="">
-                <input name="email" id="sign-in-email" class="sign-in__form-inpt" type="text" placeholder="Email" />
-                <input name="password" id="sign-in-password" class="sign-in__form-inpt" type="password" placeholder="Password" />
-            </form>
-            <button type="submit" class="sign-in__form-btn" value="Login">Sign In</button>
+                <input
+                  name="email"
+                  id="sign-in-email"
+                  class="sign-in__form-inpt"
+                  type="text"
+                  placeholder="Email"
+                />
+                <input
+                  name="password"
+                  id="sign-in-password"
+                  class="sign-in__form-inpt"
+                  type="password"
+                  placeholder="Password"
+                />
+              </form>
+              <button type="submit" class="sign-in__form-btn" value="Login">
+                Sign In
+              </button>
             </div>
           </div>
         </div>
@@ -59,11 +96,13 @@
           <div class="hero__radius-left"></div>
           <div class="hero__radius-right"></div>
           <div class="hero__left">
-              <h3 class="hero__left-header">Let’s Explore<br>Three-Dimensional visual</h3>
-              <p class="hero__left-paragraph">
-                With virtual technology you can see the digital world feel more
-                real and you can play the game with a new style.
-              </p>
+            <h3 class="hero__left-header">
+              Let’s Explore<br />Three-Dimensional visual
+            </h3>
+            <p class="hero__left-paragraph">
+              With virtual technology you can see the digital world feel more
+              real and you can play the game with a new style.
+            </p>
             <div class="hero__left-submit-user">
               <ul class="hero__left-btns">
                 <li>
@@ -150,18 +189,22 @@
                 Get it Now
               </button> -->
             </div>
-             <div class="experience__content">
+            <div class="experience__content">
               <div class="experience__content-wrap">
                 <h2 class="experience__content-headline">
                   New Experience In Playing Game
                 </h2>
                 <p class="experience__content-paragraph">
                   You can try playing the game with a new style and of course a
-                  more real feel, like you are the main character in your game and
-                  adventure in this new digital world.
+                  more real feel, like you are the main character in your game
+                  and adventure in this new digital world.
                 </p>
               </div>
-              <button type="link" onclick="visitPage()" class="experience__content-btn">
+              <button
+                type="link"
+                onclick="visitPage()"
+                class="experience__content-btn"
+              >
                 Get it Now
               </button>
             </div>
@@ -186,11 +229,11 @@
           <div class="comments__radius-left"></div>
           <div class="comments__wrap">
             <h3 class="comments__headline-head">What our clients say</h3>
-              <p class="comments__headline-content">
-                See what our customer say about us. It really matter for us. How
-                good or badwe will make ir for evaluation to make EhyalLive
-                better.
-              </p>
+            <p class="comments__headline-content">
+              See what our customer say about us. It really matter for us. How
+              good or badwe will make ir for evaluation to make EhyalLive
+              better.
+            </p>
             <div class="comments__stars">
               <ul class="comments__stars-list">
                 <li class="comments__stars-item">
@@ -284,7 +327,7 @@
                     alt="lghtBulbe"
                   />
                   <p>Take intelligent risks</p>
-                </div >
+                </div>
                 <div class="values__right-benefit">
                   <img src="./SRC/Assets/icons/ok.svg" alt="ok" />
                   <p>Keep it simple</p>
@@ -305,13 +348,17 @@
             </p>
           </div>
           <div class="footer__search">
-            <input class="footer__search__enter-box" type="email" placeholder="Your Email"/>
-            <button class="footer__search__btn" type="submit"> Start </button>
+            <input
+              class="footer__search__enter-box"
+              type="email"
+              placeholder="Your Email"
+            />
+            <button class="footer__search__btn" type="submit">Start</button>
           </div>
         </div>
       </footer>
     </div>
-    <script src="./script.js"></script> 
+    <script src="./script.js"></script>
     <script src="./src/scripts/navigationMobile.js"></script>
     <script type="module" src="./src/scripts/footerSearch.js"></script>
     <script type="module" src="./src/scripts/signIn.js"></script>

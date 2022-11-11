@@ -20,7 +20,8 @@ addingFormBtn.addEventListener("click", () =>{
     addingImageId = document.getElementById("adding-image").id;
     
     let newCard = {
-        id: {addingName, addingNameId,
+        id: {
+            addingName: addingNameId,
             addingDescription: addingDescriptionId,
             addingReview: addingReviewId,
             addingImage: addingImageId,

@@ -97,7 +97,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -106,7 +106,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -115,7 +115,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -124,7 +124,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -133,11 +133,19 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                       </tbody>
                   </table>
                   </div>
+                  <div class="role">
+                    <ul class="role__lists">
+                        <li class="role__list"><a href="#">Send email</a></li>
+                        <li class="role__list"><a href="#">Change Role</a></li>
+                        <li class="role__list"><a href="#">Block</a></li>
+                        <li class="role__list"><a href="#">Delete</a></li>
+                    </ul>
+                </div>
                 </div>
             </section>
 
@@ -176,6 +184,7 @@
     <script type="module" src="../../../scripts/categorySelect.js"></script>
     <script type="module" src="../../../scripts/signIn.js"></script>
     <script type="module" src="../../../scripts/dialogSignInDatas.js"></script>
+    <script src="../../../scripts/usersRoleModal.js"></script>
 </body>
 </html>
 
