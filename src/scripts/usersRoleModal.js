@@ -1,4 +1,3 @@
-const usersBtnDots = document.querySelectorAll(".users__btn-dots");
 const role = document.querySelector(".role");
 
 const showHide = () => {
