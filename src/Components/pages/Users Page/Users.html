@@ -96,7 +96,12 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button data-id="0" onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td>
+                                <button id="0" type="submit" class="users__btn-dots">
+                                    <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
+                                </button>
+                              </td>
+                            </div>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -105,7 +110,30 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button data-id="1" onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td>
+                              <button id="1" type="submit" class="users__btn-dots">
+                                  <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
+                              </button>
+                                </td>
+                            </div>
+                            </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td><button id="2" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                            </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td><button id="3" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -114,37 +142,19 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button data-id="2" onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
-                          </tr>
-                          <tr>
-                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
-                              <td><span>Mikle Nike</span></td>
-                              <td><span>Poland</span></td>
-                              <td><span>17</span></td>
-                              <td><span>email@example.com</span></td>
-                              <td><span>admin</span></th>
-                              <td><button data-id="3" onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
-                          </tr>
-                          <tr>
-                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
-                              <td><span>Mikle Nike</span></td>
-                              <td><span>Poland</span></td>
-                              <td><span>17</span></td>
-                              <td><span>email@example.com</span></td>
-                              <td><span>admin</span></th>
-                              <td><button data-id="4" onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button id="4" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                       </tbody>
+                      <div class="role">
+                        <ul class="role__lists">
+                            <li class="role__list"><a href="#">Send email</a></li>
+                            <li class="role__list"><a href="#">Change Role</a></li>
+                            <li class="role__list"><a href="#">Block</a></li>
+                            <li class="role__list"><a href="#">Delete</a></li>
+                        </ul>
+                      </div>
                   </table>
                   </div>
-                  <div class="role">
-                    <ul class="role__lists">
-                        <li class="role__list"><a href="#">Send email</a></li>
-                        <li class="role__list"><a href="#">Change Role</a></li>
-                        <li class="role__list"><a href="#">Block</a></li>
-                        <li class="role__list"><a href="#">Delete</a></li>
-                    </ul>
-                </div>
                 </div>
             </section>
 
@@ -183,7 +193,7 @@
     <script type="module" src="../../../scripts/usersCategorySelect.js"></script>
     <script type="module" src="../../../scripts/signIn.js"></script>
     <script type="module" src="../../../scripts/dialogSignInDatas.js"></script>
-    <script src="../../../scripts/usersRoleModal.js"></script>
+    <script type="module" src="../../../scripts/usersRoleModal.js"></script>
     <script type="module" src="../../../scripts/paginationList.js"></script>
     <script type="module" src="../../../scripts/footerSearch.js"></script>
 </body>

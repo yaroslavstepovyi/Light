@@ -1,16 +1,15 @@
 const role = document.querySelector(".role");
 const usersBtnDots = document.querySelectorAll(".users__btn-dots");
 
-const showHide = () => {
+const handleBtnDotsClick = (btn) =>{
         if (role.style.display === "none"){
                 role.style.display = "flex";
         }else{
                 role.style.display = "none";
-        }       
-}
+        }  
 
-const handleBtnDotsClick = (btn) =>{
-        console.log("handleBtnDotsClick", btn)
+        console.log("handleBtnDotsClick", btn.id)
+
 }
 
 usersBtnDots.forEach((btn) => {

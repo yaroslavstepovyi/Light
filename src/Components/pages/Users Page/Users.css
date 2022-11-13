@@ -428,6 +428,7 @@ body {
 }
 
 .users__btn-dots {
+  position: relative;
   padding: 8px 14px;
   background: transparent;
   border-color: transparent;
@@ -471,13 +472,14 @@ body {
   background: #000000;
   border: 1px solid #bc3cd8;
   border-radius: 6px;
-  right: 87px;
-  bottom: 91px;
+  right: 100px;
+  
 }
 
 .role__lists {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 10px;
 }
 
