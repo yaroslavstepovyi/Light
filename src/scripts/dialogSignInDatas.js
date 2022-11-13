@@ -3,11 +3,11 @@ var email = "";
 var password = "";
 
 signInFormBtn.addEventListener("click", () =>{
-    var email = document.getElementById("sign-in-email").value;
-    var password = document.getElementById("sign-in-password").value;
+    email = document.getElementById("sign-in-email").value;
+    password = document.getElementById("sign-in-password").value;
     let signInLogInfo = {
         email: email,
         password: password, 
     };
-    console.log(signInLogInfo);
+    console.log("signInClicked",signInLogInfo);
 })

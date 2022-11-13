@@ -200,11 +200,7 @@
                   and adventure in this new digital world.
                 </p>
               </div>
-              <button
-                type="link"
-                onclick="visitPage()"
-                class="experience__content-btn"
-              >
+              <button type="link" class="experience__content-btn">
                 Get it Now
               </button>
             </div>
@@ -236,7 +232,7 @@
             </p>
             <div class="comments__stars">
               <ul class="comments__stars-list">
-                <li class="comments__stars-item">
+                <li data-id="1" class="comments__stars-item">
                   <h3 class="comments__stars-item-headline">
                     <span>rap</span> star
                   </h3>
@@ -254,7 +250,7 @@
                   </div>
                 </li>
 
-                <li class="comments__stars-item">
+                <li data-id="2" class="comments__stars-item">
                   <h3 class="comments__stars-item-headline">
                     <span>pop</span> star
                   </h3>
@@ -272,7 +268,7 @@
                   </div>
                 </li>
 
-                <li class="comments__stars-item">
+                <li data-id="3" class="comments__stars-item">
                   <h3 class="comments__stars-item-headline">
                     <span>rock</span> star
                   </h3>
@@ -358,11 +354,13 @@
         </div>
       </footer>
     </div>
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
     <script src="./src/scripts/navigationMobile.js"></script>
     <script type="module" src="./src/scripts/footerSearch.js"></script>
     <script type="module" src="./src/scripts/signIn.js"></script>
-    <!-- <script type="module" src="./src/scripts/homePageElements.js"></script> -->
     <script type="module" src="./src/scripts/dialogSignInDatas.js"></script>
+    <script type="module" src="./src/scripts/inviteFriendsBtn.js"></script> 
+    <script type="module" src="./src/scripts/exploreDevice.js"></script> 
+    <script type="module" src="./src/scripts/commentsStars.js"></script>
   </body>
 </html>

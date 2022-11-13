@@ -12,6 +12,7 @@ footerSearchEnter.addEventListener("change", handleEnterBoxChange);
 
 
 const handleSearchSaved = () =>{
+    console.log("startClicked")
     console.log("emailSaved:=", emailSaved);
 }
 

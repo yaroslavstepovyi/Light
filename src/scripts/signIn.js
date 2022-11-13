@@ -7,9 +7,11 @@ const backgroundBlur = document.querySelector(".background-blur");
 headerNavBtn.addEventListener  ("click", () => {
     signIn.classList.remove("hidden");
     backgroundBlur.classList.remove("hidden-background-blur");
+    console.log("signInClicked");
 });
 
 backgroundBlur.addEventListener ("click", () => {
     signIn.classList.add("hidden");
     backgroundBlur.classList.add("hidden-background-blur");
+    console.log("blurBackgoundClicked");
 });
