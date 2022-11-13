@@ -96,7 +96,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button data-id="0" onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -105,7 +105,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button data-id="1" onclick="showHide()" type="submit" class="users__btn-dots"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -114,7 +114,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button data-id="2" onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -123,7 +123,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button data-id="3" onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -132,7 +132,7 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td><button data-id="4" onclick="showHide()" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
                           </tr>
                       </tbody>
                   </table>
@@ -151,12 +151,12 @@
             <section class="pagination">
                 <div class="pagination__list">
                   <ul>
-                    <li data-id="min" class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowLeft.svg" alt="" /></button></li>
-                    <li data-id="1" class="pagination__list-btn pagination__list-btn--active"><button>1</button></li>
-                    <li data-id="2" class="pagination__list-btn"><button>2</button></li>
-                    <li data-id="mid" class="pagination__list-btn"><button><img src="../../../Assets/icons/num.svg" alt=""></button></li>
-                    <li data-id="9"class="pagination__list-btn"><button>9</button></li>
-                    <li data-id="10" class="pagination__list-btn"><button>10</button></li>
+                    <li data-page="min" class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowLeft.svg" alt="" /></button></li>
+                    <li data-page="1" class="pagination__list-btn pagination__list-btn--active"><button>1</button></li>
+                    <li data-page="2" class="pagination__list-btn"><button>2</button></li>
+                    <li data-page="mid" class="pagination__list-btn"><button><img src="../../../Assets/icons/num.svg" alt=""></button></li>
+                    <li data-page="9"class="pagination__list-btn"><button>9</button></li>
+                    <li data-page="10" class="pagination__list-btn"><button>10</button></li>
                     <li data-id="max" class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowRight.svg" alt=""></button></li>
                   </ul>
                 </div>
@@ -185,5 +185,6 @@
     <script type="module" src="../../../scripts/dialogSignInDatas.js"></script>
     <script src="../../../scripts/usersRoleModal.js"></script>
     <script type="module" src="../../../scripts/paginationList.js"></script>
+    <script type="module" src="../../../scripts/footerSearch.js"></script>
 </body>
 </html>
