@@ -151,13 +151,13 @@
             <section class="pagination">
                 <div class="pagination__list">
                   <ul>
-                    <li class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowLeft.svg" alt="" /></button></li>
-                    <li class="pagination__list-btn pagination__list-btn--active"><button>1</button></li>
-                    <li class="pagination__list-btn"><button>2</button></li>
-                    <li class="pagination__list-btn"><button><img src="../../../Assets/icons/num.svg" alt=""></button></li>
-                    <li class="pagination__list-btn"><button>9</button></li>
-                    <li class="pagination__list-btn"><button>10</button></li>
-                    <li class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowRight.svg" alt=""></button></li>
+                    <li data-id="min" class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowLeft.svg" alt="" /></button></li>
+                    <li data-id="1" class="pagination__list-btn pagination__list-btn--active"><button>1</button></li>
+                    <li data-id="2" class="pagination__list-btn"><button>2</button></li>
+                    <li data-id="mid" class="pagination__list-btn"><button><img src="../../../Assets/icons/num.svg" alt=""></button></li>
+                    <li data-id="9"class="pagination__list-btn"><button>9</button></li>
+                    <li data-id="10" class="pagination__list-btn"><button>10</button></li>
+                    <li data-id="max" class="pagination__list-btn"><button><img src="../../../Assets/icons/arrowRight.svg" alt=""></button></li>
                   </ul>
                 </div>
             </section>
@@ -184,6 +184,6 @@
     <script type="module" src="../../../scripts/signIn.js"></script>
     <script type="module" src="../../../scripts/dialogSignInDatas.js"></script>
     <script src="../../../scripts/usersRoleModal.js"></script>
-    <!-- <script src="../../../scripts/usersPageElements.js"></script> -->
+    <script type="module" src="../../../scripts/paginationList.js"></script>
 </body>
 </html>

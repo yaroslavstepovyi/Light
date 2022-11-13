@@ -402,10 +402,11 @@ body {
   list-style: none;
 }
 
-.hero__left-icon {
+.hero__left-icon-img {
   width: 100%;
   width: 48px;
   margin-left: -5px;
+  cursor: pointer;
 }
 
 .hero__left-online {
