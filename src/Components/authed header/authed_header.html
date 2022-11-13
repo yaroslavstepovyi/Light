@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="authed_header.css" />
-    <link rel="stylesheet" href="../../Assets/styles/reset.css" />
+    <link rel="stylesheet" href="./reset.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -26,63 +26,20 @@
             <li class="authed__header__link"><a href="#">Games</a></li>
             <li class="authed__header__link"><a href="#">Features</a></li>
           </ul>
-          <img
+          <button class="authed__header__nav-btn">
+            <img
             src="../../Assets/icons/authed-header/user-icon.svg"
             alt="user-icon"
           />
+          </button>
             <div class="authed__header__nav-menu-wrap">
-              <a href="#"><p>User menu</p></a>
-              <a href="#"><p>Games</p></a>
+              <a href="#"><p>My Profile</p></a>
               <a href="#"><p>Log out</p></a>
               <div class="authed__header__nav-arrow"></div>
           </div>
         </div>
       </div>
     </section>
+    <script type="module" src="../../scripts/authedHeaderExpandMenu.js"></script>
   </body>
 </html>
-
-<style>
-  *,
-  *::after,
-  *::before {
-    box-sizing: border-box;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0;
-    /* background: linear-gradient(
-      180deg,
-      #010208 16.39%,
-      #010206 20.51%,
-      #040008 24.79%,
-      #010101 30.46%,
-      #010101 34.11%,
-      #010101 36.21%,
-      #010101 100%
-    ); */
-  }
-
-  .authed__header__container {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 854px;
-    padding-left: 58px;
-    padding-right: 116px;
-    /* background: linear-gradient(
-      180deg,
-      #010208 16.39%,
-      #010206 20.51%,
-      #040008 24.79%,
-      #010101 30.46%,
-      #010101 34.11%,
-      #010101 36.21%,
-      #010101 100%
-    ); */
-  }
-</style>

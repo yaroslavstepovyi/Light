@@ -64,10 +64,9 @@
                             </div>
                           </div>
                           <div class="users__filter__search">
-                            <!-- <button class="users__filter__search-btn" type="submit">Add new card</button> -->
                             <div class="users__filter__search-box">
-                              <select >
-                                <option value="" Selected disabled>Sort By Role</option>
+                              <select class="users__filter__search-select">
+                                <option class="users__filter__search-option" value="" Selected disabled>Sort By Role</option>
                                 <option class="users__filter__search-option" vlaue="txt">admin</option>
                                 <option class="users__filter__search-option" vlaue="txt">moderator</option>
                                 <option class="users__filter__search-option" vlaue="txt">user</option>
@@ -181,23 +180,10 @@
           </footer>
     </div>
     <script src="./Users.js"></script>
-    <script type="module" src="../../../scripts/categorySelect.js"></script>
+    <script type="module" src="../../../scripts/usersCategorySelect.js"></script>
     <script type="module" src="../../../scripts/signIn.js"></script>
     <script type="module" src="../../../scripts/dialogSignInDatas.js"></script>
     <script src="../../../scripts/usersRoleModal.js"></script>
-    <script src="../../../scripts/usersPageElements.js"></script>
+    <!-- <script src="../../../scripts/usersPageElements.js"></script> -->
 </body>
 </html>
-
-<style>
-    *, *::after, *::before {
-  box-sizing: border-box;
-}
-body{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  background: linear-gradient(180deg, #010208 16.39%, #010206 20.51%, #040008 24.79%, #010101 30.46%, #010101 34.11%, #010101 36.21%, #010101 100%);
-}
-</style>

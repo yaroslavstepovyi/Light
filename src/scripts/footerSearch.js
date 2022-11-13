@@ -5,8 +5,7 @@ let emailSaved = "";
 const handleEnterBoxChange = (email) =>{
     email.preventDefault();
     emailSaved = email.target.value;
-    console.log("email:=", email.target.value);
-    return email.target.value;
+    console.log("email:=", emailSaved);
 }
 
 footerSearchEnter.addEventListener("change", handleEnterBoxChange);
@@ -14,7 +13,6 @@ footerSearchEnter.addEventListener("change", handleEnterBoxChange);
 
 const handleSearchSaved = () =>{
     console.log("emailSaved:=", emailSaved);
-    return emailSaved;
 }
 
 footerSearchBtn.addEventListener("click", handleSearchSaved);

@@ -1,3 +1,17 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  background: rgba(14, 14, 14, 1);
+}
+
 :root {
   --perfect-white: #fff;
 }
