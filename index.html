@@ -36,6 +36,19 @@
           </div>
           <div class="header__nav-wrap-btn">
             <button type="submit" class="header__nav-btn">Sign In</button>
+            <div class="authed__header">
+              <button class="authed__header__nav-btn">
+                <img
+                src="./src/Assets/icons/user-icon.svg"
+                alt="user-icon"
+              />
+              </button>
+                <div class="authed__header__nav-menu-wrap hidden">
+                  <button class="authed__header__nav-menu-btn"><p>My Profile</p></button>
+                  <button class="authed__header__nav-menu-btn"><p>Log Out</p></button>
+                  <div class="authed__header__nav-arrow"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="header__nav-mobile">
@@ -48,17 +61,13 @@
               <a href="./src/Components/pages/Users Page/Users.html">Users</a>
             </li>
             <li>
-              <button
-                onclick="togglePreventScrollBtn()"
-                type="submit"
-                class="header__nav-btn">
+              <button onclick="togglePreventScrollBtn()" type="submit" class="header__nav-btn">
                 Sign In
               </button>
             </li>
           </ul>
         </div>
         <button onclick="toggleNavigBtn()" class="header__nav-small"></button>
-
         <div class="background-blur hidden-background-blur"></div>
         <div class="sign-in modal hidden">
           <div class="sign-in__wrap">
@@ -82,7 +91,7 @@
                   placeholder="Password"
                 />
               </form>
-              <button type="submit" class="sign-in__form-btn" value="Login">
+              <button type="submit" class="sign-in__form-btn" value="login">
                 Sign In
               </button>
             </div>
@@ -226,61 +235,7 @@
               better.
             </p>
             <div class="comments__stars">
-              <ul class="comments__stars-list">
-                <li data-person="name1" class="comments__stars-item">
-                  <h3 class="comments__stars-item-headline">
-                    <span>rap</span> star
-                  </h3>
-                  <p class="comments__stars-item-par">
-                    “I know in real-time where the money is spent,and I don’t
-                    have to lend out the company’s credit card anymore. What a
-                    relief!”
-                  </p>
-                  <div class="comments__stars-item-names">
-                    <img src="./SRC/Assets/icons/star1.svg" alt="str1" />
-                    <div>
-                      <p class="comments__stars-item-name">Denny Hilguston</p>
-                      <a class="comments__stars-item-name">@denny.hill</a>
-                    </div>
-                  </div>
-                </li>
-
-                <li data-person="name2" class="comments__stars-item">
-                  <h3 class="comments__stars-item-headline">
-                    <span>pop</span> star
-                  </h3>
-                  <p class="comments__stars-item-par">
-                    “I know in real-time where the money is spent,and I don’t
-                    have to lend out the company’s credit card anymore. What a
-                    relief!”
-                  </p>
-                  <div class="comments__stars-item-names">
-                    <img src="./SRC/Assets/icons/star2.svg" alt="str2" />
-                    <div>
-                      <p class="comments__stars-item-name">Denny Hilguston</p>
-                      <a class="comments__stars-item-name">@denny.hill</a>
-                    </div>
-                  </div>
-                </li>
-
-                <li data-person="name3" class="comments__stars-item">
-                  <h3 class="comments__stars-item-headline">
-                    <span>rock</span> star
-                  </h3>
-                  <p class="comments__stars-item-par">
-                    “I know in real-time where the money is spent,and I don’t
-                    have to lend out the company’s credit card anymore. What a
-                    relief!”
-                  </p>
-                  <div class="comments__stars-item-names">
-                    <img src="./SRC/Assets/icons/star3.svg" alt="str3" />
-                    <div>
-                      <p class="comments__stars-item-name">Denny Hilguston</p>
-                      <a class="comments__stars-item-name">@denny.hill</a>
-                    </div>
-                  </div>
-                </li>
-              </ul>
+              <ul class="comments__list"></ul>
             </div>
           </div>
         </section>
@@ -358,6 +313,7 @@
     <script type="module" src="./src/scripts/exploreDevice.js"></script> 
     <script type="module" src="./src/scripts/commentsStars.js"></script>
     <script type="module" src="./src/scripts/peopleOnline.js"></script>
-    <script type="module" src="./src/scripts/logo.js"></script>
+    <script type="module" src="./src/scripts/authedHeader.js"></script>
+    <script type="module" src="./src/mocks/comments.js"></script>
   </body>
 </html>

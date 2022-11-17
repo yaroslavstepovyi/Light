@@ -1,6 +1,6 @@
 const footerSearchEnter = document.querySelector(".footer__search__enter-box");
 const footerSearchBtn = document.querySelector(".footer__search__btn");
-let emailSaved = "";
+let emailSaved = "example@mail.com";
 
 const handleEnterBoxChange = (email) =>{
     email.preventDefault();
@@ -12,8 +12,7 @@ footerSearchEnter.addEventListener("change", handleEnterBoxChange);
 
 
 const handleSearchSaved = () =>{
-    console.log("startClicked")
-    console.log("emailSaved:=", emailSaved);
+    console.log("startClicked");
 }
 
 footerSearchBtn.addEventListener("click", handleSearchSaved);

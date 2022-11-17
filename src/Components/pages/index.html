@@ -23,7 +23,20 @@
             </ul>
           </div>  
           <div class="header__nav-wrap-btn">
-            <button class="header__nav-btn"  type="submit">Sign In</button>
+            <button class="header__nav-btn" type="submit">Sign In</button>
+            <div class="authed__header">
+              <button class="authed__header__nav-btn">
+                <img
+                src="../../Assets/icons/user-icon.svg"
+                alt="user-icon"
+              />
+              </button>
+                <div class="authed__header__nav-menu-wrap hidden">
+                  <button class="authed__header__nav-menu-btn"><p>My Profile</p></button>
+                  <button class="authed__header__nav-menu-btn"><p>Log Out</p></button>
+                  <div class="authed__header__nav-arrow"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="header__nav-mobile">
@@ -94,224 +107,38 @@
             <section class="content">
                 <div class="content__radius-left"></div>
                 <div class="content__radius-right"></div>
-                <ul class="content__grid">
-                  <li  data-game="game1" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game2" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game3" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game4" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game5" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game6" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game7" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game8" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game9" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game10" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game11" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                  <li data-game="game12" class="content__grid-item">
-                    <img
-                      class="content__grid-item-img"
-                      src="../../Assets/images/games/games-img-sample.png"
-                      alt="cs"
-                    />
-                    <div class="content__grid-item-description">
-                      <div class="content__grid-item-description-left">
-                        <h3>${gameName}</h3>
-                        <span>${gameDescription}</span>
-                      </div>
-                      <div class="content__grid-item-description-right">
-                        <h3>${userName}</h3>
-                        <span>${userReview}</span>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
+                <ul class="content__grid__list"></ul>
             </section>
 
             <section class="pagination">
                 <div class="pagination__list">
                   <ul>
-                    <li data-page="min" class="pagination__list-btn"><button><img src="../../Assets/icons/arrowLeft.svg" alt="" /></button></li>
-                    <li data-page="1" class="pagination__list-btn pagination__list-btn--active"><button>1</button></li>
-                    <li data-page="2" class="pagination__list-btn"><button>2</button></li>
-                    <li data-page="mid" class="pagination__list-btn"><button><img src="../../Assets/icons/num.svg" alt=""></button></li>
-                    <li data-page="9" class="pagination__list-btn"><button>9</button></li>
-                    <li data-page="10" class="pagination__list-btn"><button>10</button></li>
-                    <li data-page="max" class="pagination__list-btn"><button><img src="../../Assets/icons/arrowRight.svg" alt=""></button></li>
+                    <li data-page="min" class="pagination__list-btn">
+                      <button>
+                        <img src="../../Assets/icons/arrowLeft.svg" alt="" />
+                      </button></li>
+                    <li data-page="1" class="pagination__list-btn pagination__list-btn--active">
+                      <button>1</button>
+                    </li>
+                    <li data-page="2" class="pagination__list-btn">
+                      <button>2</button>
+                    </li>
+                    <li data-page="mid" class="pagination__list-btn">
+                      <button>
+                        <img src="../../Assets/icons/num.svg" alt="">
+                      </button>
+                    </li>
+                    <li data-page="9" class="pagination__list-btn">
+                      <button>9</button>
+                    </li>
+                    <li data-page="10" class="pagination__list-btn">
+                      <button>10</button>
+                    </li>
+                    <li data-page="max" class="pagination__list-btn">
+                      <button>
+                        <img src="../../Assets/icons/arrowRight.svg" alt="">
+                      </button>
+                    </li>
                   </ul>
                 </div>
               </section>
@@ -343,5 +170,7 @@
     <script type="module" src="../../scripts/dialogAddNewCard.js"></script>
     <script type="module" src="../../scripts/gamesCards.js"></script>
     <script type="module" src="../../scripts/paginationList.js"></script>
+    <script type="module" src="../../scripts/authedHeader.js"></script>
+    <script type="module" src="../../mocks/cards.js"></script>
 </body>
 </html>

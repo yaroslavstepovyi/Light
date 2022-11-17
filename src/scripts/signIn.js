@@ -5,8 +5,8 @@ const backgroundBlur = document.querySelector(".background-blur");
 //Background blur show/hide:
 
 headerNavBtn.addEventListener  ("click", () => {
-    signIn.classList.remove("hidden");
-    backgroundBlur.classList.remove("hidden-background-blur");
+    signIn.classList.toggle("hidden");
+    backgroundBlur.classList.toggle("hidden-background-blur");
     console.log("signInClicked");
 });
 

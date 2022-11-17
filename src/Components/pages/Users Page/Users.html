@@ -24,7 +24,20 @@
             </ul>
           </div>  
           <div class="header__nav-wrap-btn">
-            <button class="header__nav-btn"  type="submit">Sign In</button>
+            <button class="header__nav-btn" type="submit">Sign In</button>
+            <div class="authed__header">
+              <button class="authed__header__nav-btn">
+                <img
+                src="../../../Assets/icons/user-icon.svg"
+                alt="user-icon"
+              />
+              </button>
+                <div class="authed__header__nav-menu-wrap hidden">
+                  <button class="authed__header__nav-menu-btn"><p>My Profile</p></button>
+                  <button class="authed__header__nav-menu-btn"><p>Log Out</p></button>
+                  <div class="authed__header__nav-arrow"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="header__nav-mobile">
@@ -57,24 +70,24 @@
         <main>
             <section class="users">
                 <div class="users__filter">
-                        <div class="users__filter__wrap">
-                          <div class="users__filter__logo-wrap">
-                            <div class="users__filter__logo">
-                              <h3>VR Users</h3>
-                            </div>
-                          </div>
-                          <div class="users__filter__search">
-                            <div class="users__filter__search-box">
-                              <select class="users__filter__search-select">
-                                <option class="users__filter__search-option" value="" Selected disabled>Sort By Role</option>
-                                <option class="users__filter__search-option" vlaue="txt">admin</option>
-                                <option class="users__filter__search-option" vlaue="txt">moderator</option>
-                                <option class="users__filter__search-option" vlaue="txt">user</option>
-                              </select>
-                              <span class="users__filter__search-box-arrow"></span>
-                            </div>
-                          </div>
+                    <div class="users__filter__wrap">
+                      <div class="users__filter__logo-wrap">
+                        <div class="users__filter__logo">
+                          <h3>VR Users</h3>
                         </div>
+                      </div>
+                      <div class="users__filter__search">
+                      <div class="users__filter__search-box">
+                        <select class="users__filter__search-select">
+                          <option class="users__filter__search-option" value="" Selected disabled>Sort By Role</option>
+                          <option class="users__filter__search-option" vlaue="txt">admin</option>
+                          <option class="users__filter__search-option" vlaue="txt">moderator</option>
+                          <option class="users__filter__search-option" vlaue="txt">user</option>
+                        </select>
+                        <span class="users__filter__search-box-arrow"></span>
+                      </div>
+                      </div>
+                    </div>
                 </div>
                 <div class="users__datas">
                   <div class="users__datas-wrap">
@@ -100,8 +113,15 @@
                                 <button id="0" type="submit" class="users__btn-dots">
                                     <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
                                 </button>
+                                <div class="role">
+                                  <ul class="role__lists">
+                                      <li class="role__list"><button><p>Send email</p></button></li>
+                                      <li class="role__list"><button><p>Change Role</p></button></li>
+                                      <li class="role__list"><button><p>Block</p></button></li>
+                                      <li class="role__list"><button><p>Delete</p></button></li>
+                                  </ul>
+                                </div>
                               </td>
-                            </div>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -114,26 +134,15 @@
                               <button id="1" type="submit" class="users__btn-dots">
                                   <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
                               </button>
-                                </td>
-                            </div>
-                            </tr>
-                          <tr>
-                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
-                              <td><span>Mikle Nike</span></td>
-                              <td><span>Poland</span></td>
-                              <td><span>17</span></td>
-                              <td><span>email@example.com</span></td>
-                              <td><span>admin</span></th>
-                              <td><button id="2" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
-                            </tr>
-                          <tr>
-                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
-                              <td><span>Mikle Nike</span></td>
-                              <td><span>Poland</span></td>
-                              <td><span>17</span></td>
-                              <td><span>email@example.com</span></td>
-                              <td><span>admin</span></th>
-                              <td><button id="3" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <div class="role">
+                                <ul class="role__lists">
+                                    <li class="role__list"><button>Send email</button></li>
+                                    <li class="role__list"><button>Change Role</button></li>
+                                    <li class="role__list"><button>Block</button></li>
+                                    <li class="role__list"><button>Delete</button></li>
+                                </ul>
+                              </div>
+                              </td>
                           </tr>
                           <tr>
                               <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
@@ -142,18 +151,64 @@
                               <td><span>17</span></td>
                               <td><span>email@example.com</span></td>
                               <td><span>admin</span></th>
-                              <td><button id="4" class="users__btn-dots" type="submit"><img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt=""></button></td>
+                              <td>
+                                <button id="2" class="users__btn-dots" type="submit">
+                                  <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
+                                </button>
+                                <div class="role">
+                                  <ul class="role__lists">
+                                      <li class="role__list"><button><p>Send email</p></button></li>
+                                      <li class="role__list"><button><p>Change Role</p></button></li>
+                                      <li class="role__list"><button><p>Block</p></button></li>
+                                      <li class="role__list"><button><p>Delete</p></button></li>
+                                  </ul>
+                                </div>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td>
+                                <button id="3" class="users__btn-dots" type="submit">
+                                  <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
+                                </button>
+                                <div class="role">
+                                  <ul class="role__lists">
+                                      <li class="role__list"><button><p>Send email</p></button></li>
+                                      <li class="role__list"><button><p>Change Role</p></button></li>
+                                      <li class="role__list"><button><p>Block</p></button></li>
+                                      <li class="role__list"><button><p>Delete</p></button></li>
+                                  </ul>
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                              <td><img class="users__datas-user-img" src="../../../Assets/icons/users-page-users-icon.svg" alt=""></td>
+                              <td><span>Mikle Nike</span></td>
+                              <td><span>Poland</span></td>
+                              <td><span>17</span></td>
+                              <td><span>email@example.com</span></td>
+                              <td><span>admin</span></th>
+                              <td>
+                                  <button id="4" class="users__btn-dots" type="submit">
+                                    <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
+                                  </button>
+                                  <div class="role">
+                                    <ul class="role__lists">
+                                        <li class="role__list"><button><p>Send email</p></button></li>
+                                        <li class="role__list"><button><p>Change Role</p></button></li>
+                                        <li class="role__list"><button><p>Block</p></button></li>
+                                        <li class="role__list"><button><p>Delete</p></button></li>
+                                    </ul>
+                                  </div>
+                              </td>
                           </tr>
                       </tbody>
                     </table>
-                    <div class="role">
-                      <ul class="role__lists">
-                          <li class="role__list"><a href="#">Send email</a></li>
-                          <li class="role__list"><a href="#">Change Role</a></li>
-                          <li class="role__list"><a href="#">Block</a></li>
-                          <li class="role__list"><a href="#">Delete</a></li>
-                      </ul>
-                    </div>
                   </div>
                 </div>
             </section>
@@ -190,11 +245,14 @@
           </footer>
     </div>
     <script src="./Users.js"></script>
+    <script type="module" src="../../../scripts/dialogSignInDatas.js"></script>
     <script type="module" src="../../../scripts/usersCategorySelect.js"></script>
     <script type="module" src="../../../scripts/signIn.js"></script>
     <script type="module" src="../../../scripts/dialogSignInDatas.js"></script>
     <script type="module" src="../../../scripts/usersRoleModal.js"></script>
     <script type="module" src="../../../scripts/paginationList.js"></script>
     <script type="module" src="../../../scripts/footerSearch.js"></script>
+    <script type="module" src="../../../scripts/authedHeader.js"></script>
+    <script type="module" src="../../../mocks/users.js"></script>
 </body>
 </html>
