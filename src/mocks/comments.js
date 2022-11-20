@@ -28,11 +28,3 @@ export const COMMENTS =[{
     userName: "Pat Benatar",
     userNickName: "Pat.Benatar",
 },]
-
-{/* 
-<
- */}
-
-// quote: “I know in real-time where the money is spent,and I don’t
-// have to lend out the company’s credit card anymore. What a
-// relief!”

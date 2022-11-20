@@ -13,7 +13,6 @@ commentsStarsItem.forEach((star) =>{
 })
 
 const renderItem = (comment) =>{
-    console.log("comment", comment);
     const liElement = document.createElement("li");
     liElement.classList.add("comments__stars-item");
 

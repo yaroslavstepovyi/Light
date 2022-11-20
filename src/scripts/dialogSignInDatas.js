@@ -9,12 +9,17 @@ signInFormBtn.addEventListener("click", (e) =>{
 
     const email = document.getElementById("sign-in-email").value;
     const password = document.getElementById("sign-in-password").value;
-    let signInLogInfo = {
+    let userData= {
         email: email,
         password: password, 
+        id: `${email}${new Date().toJSON()}`,
     };
 
-    console.log("signInLogInfo", signInLogInfo);
+    localStorage.setItem("user", JSON.stringify(userData));
+
+    userData = JSON.parse(localStorage.getItem("userData"));
+
+
 });
 
 signInFormBtn.addEventListener("click", () => {

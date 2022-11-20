@@ -1,7 +1,11 @@
 import { CARDS } from '../mocks/cards.js';
 
+const initialCards = [...CARDS];
 const cardsList = document.querySelector(".content__grid__list")
+const filterSearchBoxView = document.querySelector(".filter__search-box-view");
 const contentGridItem = document.querySelectorAll(".content__grid-item");
+const resetButton = document.querySelector(".reset-button");
+const selectId = document.getElementById("select");
 
 const handleCardClick = (card) =>{
     console.log("id", card.dataset.id);
@@ -11,8 +15,9 @@ contentGridItem.forEach((card) => {
     card.addEventListener("click", () => handleCardClick(card))
 });
 
+//render cards:
+
 const renderItem = (card) =>{
-    // console.log("card", card);
     const liElement = document.createElement("li");
     liElement.classList.add("content__grid-item");
     liElement.setAttribute("id", card.id);
@@ -44,6 +49,7 @@ const renderList = (element, list, className) => {
 
     const completeDivElement = list.reduce((divElement, item) =>{
         divElement.appendChild(renderItem(item));
+        // console.log("divElement", divElement);
 
         return divElement;
     }, divElement);
@@ -53,4 +59,38 @@ const renderList = (element, list, className) => {
 
 renderList(cardsList, CARDS, "content__grid");
 
-// console.log("cardsList", cardsList)
+//default cards:
+
+const handleBtnReset = () =>{
+    cardsList.innerHTML = "";
+    resetButton.style.display = "none";
+    selectId.value = "default";
+
+    renderList(cardsList, initialCards, "content__grid");
+}
+
+//sort cards:
+
+const handleSortCards = (e) =>{
+    cardsList.innerHTML = "";
+    const sortType = e.target.value;
+    let sortedGames = null;
+
+//sort:
+
+    switch (sortType) {
+        case "new-first": 
+            resetButton.style.display = "block";
+            sortedGames = CARDS.sort((a, b) => a.date - b.date);
+            break;
+        case "new-second":
+            resetButton.style.display = "block";
+            sortedGames = CARDS.sort((a, b) => b.date - a.date);
+            break;        
+        }
+
+        renderList(cardsList, sortedGames, "content__grid");
+        resetButton.addEventListener("click", handleBtnReset);
+    }
+
+filterSearchBoxView.addEventListener("change", handleSortCards);

@@ -76,13 +76,14 @@
                   <div class="filter__search">
                     <button class="filter__search-btn" type="submit">Add new card</button>
                     <div class="filter__search-box">
-                      <select class="filter__search-box-view">
-                        <option value="" Selected disabled>Sort By Date</option>
-                        <option class="filter__search-option">New first</option>
-                        <option class="filter__search-option">New second</option>
+                      <select id="select" class="filter__search-box-view">
+                        <option value="default" Selected disabled class="filter__search-option">Sort By Date</option>
+                        <option value="new-first" class="filter__search-option">New first</option>
+                        <option value="new-second" class="filter__search-option">New second</option>
                       </select>
                       <span class="filter__search-box-arrow"></span>
                     </div>
+                    <button type="submit" class="reset-button">Reset Sort</button>
                   </div>
                 </div>
                 <div class="background-blur hidden-background-blur"></div>
@@ -162,7 +163,6 @@
     </div>
 
     <script src="./script.js"></script>
-    <script type="module" src="../../scripts/gamesCategorySelect.js"></script>
     <script type="module" src="../../scripts/footerSearch.js"></script>
     <script type="module" src="../../scripts/signIn.js"></script>
     <script type="module" src="../../scripts/dialogSignInDatas.js"></script>
@@ -172,5 +172,6 @@
     <script type="module" src="../../scripts/paginationList.js"></script>
     <script type="module" src="../../scripts/authedHeader.js"></script>
     <script type="module" src="../../mocks/cards.js"></script>
+    <script type="module" src="../../scripts/cardsDialog.js"></script>
 </body>
 </html>

@@ -331,7 +331,12 @@ body {
 
 .authed__header__nav-btn {
   background: transparent;
+  border-color: transparent;
   cursor: pointer;
+}
+
+.authed__header__nav-btn-img {
+  width: 32px;
 }
 
 .authed__header__nav-menu-wrap button {
@@ -1423,9 +1428,11 @@ body {
 }
 
 @media (max-width: 576px) {
+
   .container {
     position: relative;
   }
+
   /* header */
 
   .header {

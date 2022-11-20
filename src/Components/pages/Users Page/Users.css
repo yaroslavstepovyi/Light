@@ -1,6 +1,4 @@
-*,
-*::after,
-*::before {
+*, *::after, *::before {
   box-sizing: border-box;
 }
 
@@ -332,6 +330,10 @@ body {
   cursor: pointer;
 }
 
+.authed__header__nav-btn-img {
+  width: 32px;
+}
+
 .authed__header__nav-menu-btn {
   text-decoration: none;
   padding: 0;
@@ -464,6 +466,22 @@ body {
   cursor: pointer;
   box-shadow: 1px 1px 1px grey;
   outline: 0;
+  cursor: pointer;
+}
+
+.reset-button {
+  display: none;
+  height: 34px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #fff;
+  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
 }
 
 /* users datas */
@@ -481,29 +499,13 @@ body {
 }
 
 .users__datas-table {
-  border-collapse: collapse;
   width: 100%;
   max-width: 928px;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   color: #ffffff;
-}
-
-.users__datas-user-img {
-  cursor: pointer;
-}
-
-.users__btn-dots {
-  padding: 8px 14px;
-  background: transparent;
-  border-color: transparent;
-  cursor: pointer;
-}
-
-.users__btn-dots:hover {
-  filter: invert(58%) sepia(100%) saturate(7480%) hue-rotate(280deg)
-    brightness(96%) contrast(110%);
+  border-collapse: collapse;
 }
 
 .users__datas-table tbody {
@@ -524,6 +526,22 @@ body {
 .users__datas-table td span {
   width: 100%;
   overflow-x: hidden;
+}
+
+.users__datas-user-img {
+  cursor: pointer;
+}
+
+.users__btn-dots {
+  padding: 8px 14px;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.users__btn-dots:hover {
+  filter: invert(58%) sepia(100%) saturate(7480%) hue-rotate(280deg)
+    brightness(96%) contrast(110%);
 }
 
 /* role */

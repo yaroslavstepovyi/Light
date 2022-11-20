@@ -5,4 +5,4 @@ const handlegetItNowClicked = () =>{
     console.log("getItNowClicked");
 }
 
-experienceContentBtn.addEventListener("click", handlegetItNowClicked)
+experienceContentBtn.addEventListener("click", handlegetItNowClicked);
