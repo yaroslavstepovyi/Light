@@ -10,16 +10,7 @@ body {
   align-items: center;
   margin: 0 auto;
   padding: 0;
-  background: linear-gradient(
-    180deg,
-    #010208 16.39%,
-    #010206 20.51%,
-    #040008 24.79%,
-    #010101 30.46%,
-    #010101 34.11%,
-    #010101 36.21%,
-    #010101 100%
-  );
+  background: rgba(14, 14, 14, 1);
 }
 
 :root {
@@ -486,7 +477,6 @@ body {
 
 .reset-button {
   display: none;
-  width: 106px;
   height: 34px;
   font-family: "Poppins";
   font-style: normal;
@@ -494,10 +484,14 @@ body {
   font-size: 16px;
   line-height: 24px;
   color: #fff;
-  background: linear-gradient(99.05deg, #bc3cd8 0.07%, #c54b8c 106.32%);
+  background: rgba(14, 14, 14, 1);
   border-radius: 6px;
   border: none;
   cursor: pointer;
+}
+
+.reset-btn{
+  max-width: 20px;
 }
 
 .filter__search-option {
