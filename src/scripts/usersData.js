@@ -66,7 +66,7 @@ const handleBtnReset = () =>{
         <th>Role</th>
         <th>Actions</th>
     </tr>
-</tbody>`;
+    </tbody>`;
     resetButton.style.display = "none";
     selectId.value = "default";
 
