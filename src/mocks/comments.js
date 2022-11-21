@@ -1,8 +1,8 @@
 export const COMMENTS =[{
     genre: "rap",
-    comment: "“I know in real-time where the money is spent, and I don’t\
-                have to lend out the company’s credit card anymore. What a\
-                relief!”",
+    comment: `“I know in real-time where the money is spent, and I don’t
+    have to lend out the company’s credit card anymore. What a
+    relief!”`,
     img: "star1",
     alt: "str1",
     userName: "Nicki Minaj",
@@ -10,9 +10,9 @@ export const COMMENTS =[{
 },
 {
     genre: "pop",
-    comment: "“I know in real-time where the money is spent, and I don’t\
-                have to lend out the company’s credit card anymore. What a\
-                relief!”",
+    comment: `“I know in real-time where the money is spent, and I don’t
+                have to lend out the company’s credit card anymore. What a
+                relief!”`,
     img: "star2",
     alt: "star2",
     userName: "Fergie Duhamel",
@@ -20,9 +20,9 @@ export const COMMENTS =[{
 },
 {
     genre: "rock",
-    comment: "“I know in real-time where the money is spent, and I don’t\
-                have to lend out the company’s credit card anymore. What a\
-                relief!”",
+    comment: `“I know in real-time where the money is spent, and I don’t
+    have to lend out the company’s credit card anymore. What a
+    relief!”`,
     img: "star3",
     alt: "star3",
     userName: "Pat Benatar",
