@@ -145,6 +145,7 @@ body {
   align-items: center;
   margin-top: 16px;
   margin-bottom: 32px;
+  z-index: 100;
 }
 
 .header__radius {
@@ -836,8 +837,8 @@ body {
   }
 
   .header__logo {
-    max-width: 65px;
-    max-height: 36px;
+    max-width: 114px;
+    max-height: 72px;
     font-size: 17px;
     cursor: pointer;
   }
