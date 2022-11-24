@@ -141,12 +141,13 @@ body {
 /* header */
 
 .header {
-  position: relative;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 12px;
   margin-bottom: 32px;
+  top: 0;
   z-index: 100;
 }
 

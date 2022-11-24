@@ -15,13 +15,3 @@ const toggleNavigBtn = () => {
 };
 
 headerNavMobile.addEventListener("click", toggleNavigBtn)
-
-
-
-
-
-
-
-
-
-

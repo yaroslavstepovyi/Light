@@ -1,5 +1,6 @@
 import { USERS } from "../mocks/users.js";
 
+const elementBody = document.querySelector("body");
 const signIn = document.querySelector(".sign-in");
 const signInFormBtn = document.querySelector(".sign-in__form-btn");
 const authedHeader = document.querySelector(".authed__header");
@@ -9,6 +10,7 @@ const logOutBtn = document.querySelector(".log-out-btn");
 const userMenu = document.querySelector(".authed__header__nav-menu-wrap");
 const signInEmail = document.getElementById("sign-in-email");
 const signInPassword = document.getElementById("sign-in-password");
+
 
 
 const changeHeader = () =>{
@@ -38,6 +40,7 @@ const handleSignInFormBtn = (e) =>{
 
         if(user){
             resetInputsField();
+            elementBody.style.overflow = "";
             signIn.classList.add("hidden");
             backgroundBlur.classList.add("hidden-background-blur");
             localStorage.setItem("user", JSON.stringify(user));

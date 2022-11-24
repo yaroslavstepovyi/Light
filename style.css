@@ -145,12 +145,13 @@ body {
 /* header */
 
 .header {
-  position: relative;
+  position: sticky;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 22px;
   margin-bottom: 32px;
+  top: 0;
   z-index: 100;
 }
 
@@ -1292,6 +1293,10 @@ body {
 
   .hero__left-people {
     gap: 5px;
+  }
+
+  .hero__left-icon-img {
+    width: 32px;
   }
 
   .hero__right {

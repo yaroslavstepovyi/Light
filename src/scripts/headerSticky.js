@@ -3,15 +3,14 @@ const headerRadius = document.querySelector(".header__radius");
 
 const handleScrollHeader = () =>{
     const scrollPos = window.scrollY;
+    console.log(scrollPos);
 
-    if ( scrollPos > 22) {
-        header.style.position = "sticky";
-        header.style.top = "0";
-        header.style.background = "rgba(14, 14, 14, 1)"
+    if ( scrollPos > 0) {
+        header.style.background = "rgba(14, 14, 14, 1)";
         headerRadius.style.display = "none";
-    } else {
+    }else{
         headerRadius.style.display = "";
-        header.style.background = ""
+        header.style.background = "";
     }
 }
 
