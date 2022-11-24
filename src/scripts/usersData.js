@@ -12,7 +12,7 @@ const renderItem = (user) =>{
     const rowElement = document.createElement("tr");
 
     rowElement.innerHTML = `
-        <td><img class="users__datas-user-img" src="../../../Assets/icons/${user.img}.svg" alt=${user.alt}></td>
+        <td><img class="users__datas-user-img" src="../../../Assets/icons/${user.img}.svg" alt=${user.name}></td>
         <td><span>${user.name}</span></td>
         <td><span>${user.country}</span></td>
         <td><span>${user.age}</span></td>

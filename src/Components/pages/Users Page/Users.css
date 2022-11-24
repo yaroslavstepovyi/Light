@@ -533,6 +533,8 @@ body {
 }
 
 .users__datas-user-img {
+  border-radius: 100%;
+  width: 44px;
   cursor: pointer;
 }
 
@@ -559,7 +561,6 @@ body {
   padding-right: 16px;
   padding-left: 16px;
   padding-bottom: 16px;
-  width: 115%;
   top: 70px;
   right: 90px;
   background: #000000;

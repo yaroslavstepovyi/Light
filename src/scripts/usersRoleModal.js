@@ -9,7 +9,6 @@ export const handleBtnDotsClick = (btn) =>{
         }  
 
         console.log("handleBtnDotsClick", btn.id);
-
 }
 
 usersBtnDots.forEach((btn) => {

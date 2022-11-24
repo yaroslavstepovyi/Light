@@ -1,38 +1,65 @@
+import { USERS } from "../mocks/users.js";
+
 const signIn = document.querySelector(".sign-in");
 const signInFormBtn = document.querySelector(".sign-in__form-btn");
 const authedHeader = document.querySelector(".authed__header");
 const headerNavBtn = document.querySelector(".header__nav-btn");
 const backgroundBlur = document.querySelector(".background-blur");
-
-signInFormBtn.addEventListener("click", (e) =>{
-    e.preventDefault();
-
-    const email = document.getElementById("sign-in-email").value;
-    const password = document.getElementById("sign-in-password").value;
-    let userData= {
-        email: email,
-        password: password, 
-        id: `${email}${new Date().toJSON()}`,
-    };
-
-    localStorage.setItem("user", JSON.stringify(userData));
-
-    userData = JSON.parse(localStorage.getItem("userData"));
+const logOutBtn = document.querySelector(".log-out-btn");
+const userMenu = document.querySelector(".authed__header__nav-menu-wrap");
+const signInEmail = document.getElementById("sign-in-email");
+const signInPassword = document.getElementById("sign-in-password");
 
 
-});
+const changeHeader = () =>{
+    const user = JSON.parse(localStorage.getItem("user"));
 
-signInFormBtn.addEventListener("click", () => {
-    signIn.classList.add("hidden");
-    backgroundBlur.classList.add("hidden-background-blur");
-});
-
-//toggle sign in button and user icon:
-
-const handleSignInFormDisplayStorage = () =>{
-    authedHeader.style.display = "flex";
-    headerNavBtn.style.display = "none";    
+    if(user){
+        authedHeader.style.display = "flex";
+        headerNavBtn.style.display = "none";  
+    }
+    else{
+        authedHeader.style.display = "none";
+        headerNavBtn.style.display = "flex"; 
+    }
 }
 
-signInFormBtn.addEventListener("click", handleSignInFormDisplayStorage)
+const resetInputsField = () =>{
+    signInEmail.value = "";
+    signInPassword.value="";
+}
 
+const handleSignInFormBtn = (e) =>{
+        e.preventDefault();
+    
+        const email = document.getElementById("sign-in-email").value;
+        const password = document.getElementById("sign-in-password").value;
+        const user = USERS.find((user) => user.email === email && user.password === password);
+
+        if(user){
+            resetInputsField();
+            signIn.classList.add("hidden");
+            backgroundBlur.classList.add("hidden-background-blur");
+            localStorage.setItem("user", JSON.stringify(user));
+            changeHeader();
+        }else{
+            alert("Try Again:")
+            alert("Invalid E-mail or Password!");
+        }
+}
+
+signInFormBtn.addEventListener("click", handleSignInFormBtn);
+
+
+const handleLogOut = () =>{
+    userMenu.classList.add("hidden");
+    localStorage.setItem("user", null);
+    changeHeader();
+}
+
+logOutBtn.addEventListener("click", handleLogOut);
+
+
+window.addEventListener("DOMContentLoaded", () =>{
+    changeHeader();
+});

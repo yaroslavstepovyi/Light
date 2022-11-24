@@ -1,7 +1,8 @@
 const experienceContentBtn = document.querySelector(".experience__content-btn");
 
 const handlegetItNowClicked = () =>{
-    window.location = 'https://store.steampowered.com/';
+    let newWindow = window.open('https://store.steampowered.com/', "_blank");
+    newWindow.opener = null;
     console.log("getItNowClicked");
 }
 
