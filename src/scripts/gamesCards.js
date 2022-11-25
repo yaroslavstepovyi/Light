@@ -33,8 +33,8 @@ const renderItem = (card) =>{
             <span class="game-description">${card.gameDescription}</span>
             </div>
             <div class="content__grid-item-description-right">
-            <h3 class="user-name">${card.userName}</h3>
-            <span class="user-review">${card.userReview}</span>
+            <h3 class="user-name">${card["user"]["userName"]}</h3>
+            <span class="user-review">${card["user"]["userReview"]}</span>
             </div>
         </div>
     `;
@@ -49,7 +49,6 @@ const renderList = (element, list, className) => {
 
     const completeDivElement = list.reduce((divElement, item) =>{
         divElement.appendChild(renderItem(item));
-        // console.log("divElement", divElement);
 
         return divElement;
     }, divElement);

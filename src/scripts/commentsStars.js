@@ -1,16 +1,8 @@
 import { COMMENTS } from "../mocks/comments.js";
 
 
-const commentsStarsItem = document.querySelectorAll(".comments__stars-item");
 const commentsList = document.querySelector(".comments__list");
 
-const handleStarClicked = (star) =>{
-    console.log("star", star.dataset.person);
-}
-
-commentsStarsItem.forEach((star) =>{
-    star.addEventListener("click", () => handleStarClicked(star));
-})
 
 const renderItem = (comment) =>{
     const liElement = document.createElement("li");

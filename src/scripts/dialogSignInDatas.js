@@ -31,6 +31,12 @@ const resetInputsField = () =>{
     signInPassword.value="";
 }
 
+const checkInputPass = () =>{
+    if(signInPassword.value.length < 6){
+        alert("password is requiered minimum 6 symbols");
+    }
+}
+
 const handleSignInFormBtn = (e) =>{
         e.preventDefault();
     
@@ -39,15 +45,15 @@ const handleSignInFormBtn = (e) =>{
         const user = USERS.find((user) => user.email === email && user.password === password);
 
         if(user){
-            resetInputsField();
+            localStorage.setItem("user", JSON.stringify(user));
             elementBody.style.overflow = "";
             signIn.classList.add("hidden");
             backgroundBlur.classList.add("hidden-background-blur");
-            localStorage.setItem("user", JSON.stringify(user));
+            resetInputsField();
             changeHeader();
         }else{
-            alert("Try Again:")
-            alert("Invalid E-mail or Password!");
+            alert("invalid email or password");
+            checkInputPass();
         }
 }
 
