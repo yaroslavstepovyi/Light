@@ -1,14 +1,14 @@
-export const role = document.querySelector(".role");
-export const usersBtnDots = document.querySelectorAll(".users__btn-dots");
+const role = document.querySelector(".role");
+const usersBtnDots = document.querySelectorAll(".users__btn-dots");
 
-export const handleBtnDotsClick = (btn) =>{
+export const handleBtnDotsClick = () =>{
         if (role.style.display === "none"){
                 role.style.display = "flex";
-        }else{
+        }else{             
                 role.style.display = "none";
         }  
 }
 
 usersBtnDots.forEach((btn) => {
-        btn.addEventListener("click", () => handleBtnDotsClick(btn))
+        btn.addEventListener("click", handleBtnDotsClick)
 })

@@ -19,8 +19,8 @@ const renderItem = (user) =>{
         <td><span>${user.email}</span></td>
         <td><span>${user.role}</span></th>
         <td>
-            <button onclick="handleBtnDotsClick" type="submit" class="users__btn-dots">
-                <img class="users__datas-dots" src="./../../../Assets/icons/users-three-dots.svg" alt="">
+            <button type="submit" class="users__btn-dots">
+                <img class="users__datas-dots" src="../../../Assets/icons/users-three-dots.svg" alt="">
             </button>
             <div class="role">
                 <ul class="role__lists">
@@ -32,6 +32,7 @@ const renderItem = (user) =>{
             </div>
         </td>
     `;
+ 
 
     return rowElement;
 };
