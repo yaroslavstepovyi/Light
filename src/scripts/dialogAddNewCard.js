@@ -1,4 +1,4 @@
-import { CARDS } from "../mocks/cards.js"
+import { CARDS } from "../mocks/cards.js";
 
 const initialCards = [...CARDS];
 const addingFormBtn = document.querySelector(".adding__form-btn");
@@ -13,12 +13,26 @@ const filterSearchBoxView = document.querySelector(".filter__search-box-view");
 const resetButton = document.querySelector(".reset-button");
 const selectId = document.getElementById("select");
 const gameDialog = document.querySelector(".game-dialog");
-const hidden = document.querySelector(".hidden");
 
 
+//render card dialog:
 const handleClickCard = (card) =>{
     gameDialog.classList.remove("hidden");
+    backgroundBlur.classList.remove("hidden-background-blur");
+  
+    document.querySelector(".game-dialog__img").src = `../../Assets/images/Games/${card.img}.png`;
+    document.querySelector(".game-dialog__game-name").innerHTML = card.gameName;
+    document.querySelector(".game-dialog__game-description").innerHTML = card.gameDescription;
+    document.querySelector(".game-dialog__user-name").innerHTML = card.user["userName"];
+    document.querySelector(".game-dialog__user-review").innerHTML = card.user["userReview"];
 }
+
+//close game dialog:
+
+const closeGameDialog = () =>{
+    gameDialog.classList.add("hidden");
+}
+
 //render cards:
 
 const renderItem = (card) =>{
@@ -104,6 +118,7 @@ addingFormBtn.addEventListener("click", handleAddNewGame);
 
 const handleClickBackground = () =>{
     resetInputsField();
+    closeGameDialog();
 } 
 
 backgroundBlur.addEventListener("click", handleClickBackground);
@@ -148,9 +163,7 @@ filterSearchBoxView.addEventListener("change", handleSortCards);
 window.addEventListener("DOMContentLoaded", () =>{
     const cards = JSON.parse(localStorage.getItem("cards")) || [];
 
-    if(cards){
-        
-    }
+    
 });
 
 
