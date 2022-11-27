@@ -4,7 +4,7 @@ const headerRadius = document.querySelector(".header__radius");
 const handleScrollHeader = () =>{
     const scrollPos = window.scrollY;
 
-    if ( scrollPos > 0) {
+    if ( scrollPos > 22) {
         header.style.background = "rgba(14, 14, 14, 1)";
         headerRadius.style.display = "none";
     }else{

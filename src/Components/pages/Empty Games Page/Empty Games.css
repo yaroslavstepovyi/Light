@@ -73,6 +73,29 @@
   color: #ffffff;
 }
 
+.header__link:nth-child(2) {
+  background: linear-gradient(99.05deg, #c80ef1 0.07%, #8e054e 106.32%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header__link:nth-child(2)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--perfect-white);
+  max-width: 10px;
+  width: 50%;
+  height: 3px;
+  left: 40%;
+  bottom: -5px;
+  border-radius: 3px;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1, 1);
+}
+
 .header__link-home {
   background: linear-gradient(99.05deg, #c80ef1 0.07%, #8e054e 106.32%);
   -webkit-background-clip: text;

@@ -7,8 +7,6 @@ export const handleBtnDotsClick = (btn) =>{
         }else{
                 role.style.display = "none";
         }  
-
-        console.log("handleBtnDotsClick", btn.id);
 }
 
 usersBtnDots.forEach((btn) => {

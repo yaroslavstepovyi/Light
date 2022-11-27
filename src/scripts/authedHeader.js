@@ -4,7 +4,6 @@ const authedHeaderNavMenuWrap = document.querySelector(".authed__header__nav-men
 //show and hide authorized user menu:
 
 const handleAuthedHeaderNavBtnClick = () =>{
-    console.log("show expand menu:");
     authedHeaderNavMenuWrap.classList.toggle("hidden");
 }
 

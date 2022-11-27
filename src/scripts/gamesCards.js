@@ -1,19 +1,11 @@
 import { CARDS } from '../mocks/cards.js';
 
 const initialCards = [...CARDS];
-const cardsList = document.querySelector(".content__grid__list")
+const cardsList = document.querySelector(".content__grid__list");
 const filterSearchBoxView = document.querySelector(".filter__search-box-view");
-const contentGridItem = document.querySelectorAll(".content__grid-item");
 const resetButton = document.querySelector(".reset-button");
 const selectId = document.getElementById("select");
 
-const handleCardClick = (card) =>{
-    console.log("id", card.dataset.id);
-}
-
-contentGridItem.forEach((card) => {
-    card.addEventListener("click", () => handleCardClick(card))
-});
 
 //render cards:
 
@@ -93,3 +85,4 @@ const handleSortCards = (e) =>{
     }
 
 filterSearchBoxView.addEventListener("change", handleSortCards);
+

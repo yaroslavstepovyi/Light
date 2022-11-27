@@ -12,7 +12,6 @@ const signInEmail = document.getElementById("sign-in-email");
 const signInPassword = document.getElementById("sign-in-password");
 
 
-
 const changeHeader = () =>{
     const user = JSON.parse(localStorage.getItem("user"));
 
