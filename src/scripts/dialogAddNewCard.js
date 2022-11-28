@@ -33,7 +33,7 @@ const closeGameDialog = () =>{
     gameDialog.classList.add("hidden");
 }
 
-//render cards:
+//render game card:
 
 const renderItem = (card) =>{
     const liElement = document.createElement("li");
@@ -61,6 +61,8 @@ const renderItem = (card) =>{
 
     return liElement;
 }
+
+//render game card list:
 
 const renderList = (element, list) => {
     const divElement = document.createElement("div");
@@ -91,13 +93,13 @@ const handleAddNewGame = (e) =>{
     const addingImage = document.getElementById("adding-image").value;
     
     const card = CARDS.find((card) => card["user"]["userName"] === addingName && card.gameDescription === addingDescription && card["user"]["userReview"] == addingReview && card.img === addingImage);
+    const cards = JSON.parse(localStorage.getItem("cards")) || [];
     
     if(card){
         addingModal.classList.add("hidden");
         backgroundBlur.classList.add("hidden-background-blur");
         resetInputsField();
 
-        const cards = JSON.parse(localStorage.getItem("cards")) || [];
         
         if(!cards.length){
             return localStorage.setItem("cards", JSON.stringify([{name: addingName, description: addingDescription, review: addingReview, img: addingImage}]));
@@ -105,7 +107,6 @@ const handleAddNewGame = (e) =>{
 
         cards.push({name: addingName, description: addingDescription, review: addingReview, img: addingImage});
         localStorage.setItem("cards", JSON.stringify(cards));
-        
         
         renderList(cardsList, CARDS);
     }else{
@@ -161,9 +162,7 @@ const handleSortCards = (e) =>{
 filterSearchBoxView.addEventListener("change", handleSortCards);
 
 window.addEventListener("DOMContentLoaded", () =>{
-    const cards = JSON.parse(localStorage.getItem("cards")) || [];
-
-    
+    // const cards = JSON.parse(localStorage.getItem("cards")) || [];
 });
 
 
