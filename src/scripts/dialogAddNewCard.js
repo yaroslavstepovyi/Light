@@ -15,8 +15,12 @@ const selectId = document.getElementById("select");
 const gameDialog = document.querySelector(".game-dialog");
 
 
-//render game card:
+//close game dialog:
+const closeGameDialog = () =>{
+    gameDialog.classList.add("hidden");
+}
 
+//render game card:
 const renderItem = (card) =>{
     const liElement = document.createElement("li");
     liElement.classList.add("content__grid-item");
@@ -29,15 +33,17 @@ const renderItem = (card) =>{
         />
         <div class="content__grid-item-description">
             <div class="content__grid-item-description-left">
-            <h3 class="game-name">${card.gameName}</h3>
-            <span class="game-description">${card.gameDescription}</span>
+                <h3 class="game-name">${card.gameName}</h3>
+                <span class="game-description">${card.gameDescription}</span>
             </div>
             <div class="content__grid-item-description-right">
-            <h3 class="user-name">${card.userName}</h3>
-            <span class="user-review">${card.userReview}</span>
+                <h3 class="user-name">${card.userName}</h3>
+                <span class="user-review">${card.userReview}</span>
             </div>
         </div>
     `;
+
+    console.log(card.img);
 
     liElement.addEventListener("click", () => handleClickCard(card));
 
@@ -45,7 +51,6 @@ const renderItem = (card) =>{
 }
 
 //render game card list:
-
 const renderList = (element, list) => {
     const divElement = document.createElement("div");
     
@@ -74,14 +79,14 @@ const handleAddNewGame = (e) =>{
     const addingReview = document.getElementById("adding-review").value;
     const addingImage = document.getElementById("adding-image").value;
     
-    const card = CARDS.find((card) => card.userName === addingName && card.userReview == addingReview && card.gameDescription === addingDescription && card.img === addingImage);
+    const card = CARDS.find((card) => card.userName === addingName && card.userReview === addingReview && card.gameDescription === addingDescription && card.img === addingImage);
     
     if(card){
         addingModal.classList.add("hidden");
         backgroundBlur.classList.add("hidden-background-blur");
-        resetInputsField();
 
         const cards = JSON.parse(localStorage.getItem("cards")) || [];
+        renderList(cardsList, cards);
         if(!cards.length){
             return localStorage.setItem("cards", JSON.stringify([{name: addingName, description: addingDescription, review: addingReview, img: addingImage}]));
         }
@@ -89,7 +94,7 @@ const handleAddNewGame = (e) =>{
         cards.push({name: addingName, description: addingDescription, review: addingReview, img: addingImage});
         localStorage.setItem("cards", JSON.stringify(cards));
 
-        renderList(cardsList, cards);
+        resetInputsField();
     }else{
         alert("Such game doesn't exist");
     }
@@ -114,18 +119,11 @@ const handleClickCard = (card) =>{
     document.querySelector(".game-dialog__img").src = `../../Assets/images/Games/${card.img}.png`;
     document.querySelector(".game-dialog__game-name").innerHTML = card.gameName;
     document.querySelector(".game-dialog__game-description").innerHTML = card.gameDescription;
-    document.querySelector(".game-dialog__user-name").innerHTML = card.user["userName"];
-    document.querySelector(".game-dialog__user-review").innerHTML = card.user["userReview"];
-}
-
-//close game dialog:
-
-const closeGameDialog = () =>{
-    gameDialog.classList.add("hidden");
+    document.querySelector(".game-dialog__user-name").innerHTML = card.userName;
+    document.querySelector(".game-dialog__user-review").innerHTML = card.userReview;
 }
 
 //default cards:
-
 const handleBtnReset = () =>{
     cardsList.innerHTML = "";
     resetButton.style.display = "none";
@@ -135,7 +133,6 @@ const handleBtnReset = () =>{
 }
 
 //sort cards:
-
 const handleSortCards = (e) =>{
     cardsList.innerHTML = "";
     const sortType = e.target.value;
