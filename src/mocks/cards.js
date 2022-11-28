@@ -4,11 +4,8 @@ export const CARDS = [{
     alt: "doom",
     gameName: "test1",
     gameDescription: "test1",
-    user: {
-        id: "01",
-        userName: "test1",
-        userReview: "test1",
-    },
+    userName: "test1",
+    userReview: "test1",  
     date: new Date('2020-03-21'),
 },
 {
@@ -17,11 +14,8 @@ export const CARDS = [{
     alt: "tarkov",
     gameName: "test2",
     gameDescription: "test2",
-    user:{
-        id: "02",
-        userName: "test2",
-        userReview: "test2",
-    },
+    userName: "test2",
+    userReview: "test2",
     date: new Date('2019-12-18'),
 },
 {

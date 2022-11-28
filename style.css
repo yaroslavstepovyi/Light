@@ -898,6 +898,7 @@ body {
 }
 
 .values__right-benefits p {
+  max-width: 46px;
   font-weight: 600;
   font-size: 9px;
   line-height: 11px;

@@ -15,24 +15,6 @@ const selectId = document.getElementById("select");
 const gameDialog = document.querySelector(".game-dialog");
 
 
-//render card dialog:
-const handleClickCard = (card) =>{
-    gameDialog.classList.remove("hidden");
-    backgroundBlur.classList.remove("hidden-background-blur");
-  
-    document.querySelector(".game-dialog__img").src = `../../Assets/images/Games/${card.img}.png`;
-    document.querySelector(".game-dialog__game-name").innerHTML = card.gameName;
-    document.querySelector(".game-dialog__game-description").innerHTML = card.gameDescription;
-    document.querySelector(".game-dialog__user-name").innerHTML = card.user["userName"];
-    document.querySelector(".game-dialog__user-review").innerHTML = card.user["userReview"];
-}
-
-//close game dialog:
-
-const closeGameDialog = () =>{
-    gameDialog.classList.add("hidden");
-}
-
 //render game card:
 
 const renderItem = (card) =>{
@@ -51,8 +33,8 @@ const renderItem = (card) =>{
             <span class="game-description">${card.gameDescription}</span>
             </div>
             <div class="content__grid-item-description-right">
-            <h3 class="user-name">${card["user"]["userName"]}</h3>
-            <span class="user-review">${card["user"]["userReview"]}</span>
+            <h3 class="user-name">${card.userName}</h3>
+            <span class="user-review">${card.userReview}</span>
             </div>
         </div>
     `;
@@ -92,26 +74,26 @@ const handleAddNewGame = (e) =>{
     const addingReview = document.getElementById("adding-review").value;
     const addingImage = document.getElementById("adding-image").value;
     
-    const card = CARDS.find((card) => card["user"]["userName"] === addingName && card.gameDescription === addingDescription && card["user"]["userReview"] == addingReview && card.img === addingImage);
-    const cards = JSON.parse(localStorage.getItem("cards")) || [];
+    const card = CARDS.find((card) => card.userName === addingName && card.userReview == addingReview && card.gameDescription === addingDescription && card.img === addingImage);
     
     if(card){
         addingModal.classList.add("hidden");
         backgroundBlur.classList.add("hidden-background-blur");
         resetInputsField();
 
-        
+        const cards = JSON.parse(localStorage.getItem("cards")) || [];
         if(!cards.length){
             return localStorage.setItem("cards", JSON.stringify([{name: addingName, description: addingDescription, review: addingReview, img: addingImage}]));
         }
 
         cards.push({name: addingName, description: addingDescription, review: addingReview, img: addingImage});
         localStorage.setItem("cards", JSON.stringify(cards));
-        
-        renderList(cardsList, CARDS);
+
+        renderList(cardsList, cards);
     }else{
         alert("Such game doesn't exist");
     }
+    
 }
 
 addingFormBtn.addEventListener("click", handleAddNewGame);
@@ -124,6 +106,23 @@ const handleClickBackground = () =>{
 
 backgroundBlur.addEventListener("click", handleClickBackground);
 
+//render card dialog:
+const handleClickCard = (card) =>{
+    gameDialog.classList.remove("hidden");
+    backgroundBlur.classList.remove("hidden-background-blur");
+  
+    document.querySelector(".game-dialog__img").src = `../../Assets/images/Games/${card.img}.png`;
+    document.querySelector(".game-dialog__game-name").innerHTML = card.gameName;
+    document.querySelector(".game-dialog__game-description").innerHTML = card.gameDescription;
+    document.querySelector(".game-dialog__user-name").innerHTML = card.user["userName"];
+    document.querySelector(".game-dialog__user-review").innerHTML = card.user["userReview"];
+}
+
+//close game dialog:
+
+const closeGameDialog = () =>{
+    gameDialog.classList.add("hidden");
+}
 
 //default cards:
 
@@ -161,8 +160,13 @@ const handleSortCards = (e) =>{
 
 filterSearchBoxView.addEventListener("change", handleSortCards);
 
+const keepCardsInLocalStorage = () =>{
+    const cards = JSON.parse(localStorage.getItem("cards")) || [];
+   if(cards){
+    renderList(cardsList, cards, "content__list-cards");
+   }
+} 
+
 window.addEventListener("DOMContentLoaded", () =>{
-    // const cards = JSON.parse(localStorage.getItem("cards")) || [];
+    keepCardsInLocalStorage();
 });
-
-
