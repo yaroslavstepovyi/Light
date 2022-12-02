@@ -11,7 +11,8 @@ const handlegetItNowClicked = () =>{
 experienceContentBtn.addEventListener("click", handlegetItNowClicked);
 
 const handleHeroLeftBtnClick = () =>{
-    heroLeftBtnMail.setAttribute("href", "mailto:yaroslavstepovyi@gmail.com?Hello, my name is = Subject = new country day");
+    heroLeftBtnMail.setAttribute("href", "mailto:yaroslavstepovyi@gmail.com?&subject= VR Games &body=Good afternoon, with this letter we are pleased to inform you about our new product, where you can add an exciting game of your choice. We have all the new products you're sure to love");
+    
 }
 
 heroLeftBtn.addEventListener("click", handleHeroLeftBtnClick);

@@ -10,6 +10,19 @@ const selectId = document.getElementById("select");
 const renderItem = (user) =>{
     const rowElement = document.createElement("tr");
     rowElement.classList.add("users__datas-row");
+
+    usersTableRowsList.innerHTML = `
+    <tbody>
+        <tr>
+            <th>Avatar</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Actions</th>
+        </tr>
+    </tbody>`
     
     rowElement.innerHTML = `
         <td><img class="users__datas-user-img" src="../../../Assets/icons/${user.img}.svg" alt=${user.name}></td>
@@ -54,18 +67,6 @@ renderList(usersTableRowsList, USERS);
 
 //default users order:
 const handleBtnReset = () =>{
-    usersTableRowsList.innerHTML = `
-    <tbody>
-    <tr>
-        <th>Avatar</th>
-        <th>Name</th>
-        <th>Country</th>
-        <th>Age</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Actions</th>
-    </tr>
-    </tbody>`;
     resetButton.style.display = "none";
     selectId.value = "default";
 
