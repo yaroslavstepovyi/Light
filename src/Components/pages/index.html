@@ -39,7 +39,7 @@
             </div>
           </div>
         </div>
-        <div class="header__nav-mobile">
+        <div class="header__nav-mobile" style="display: none;">
           <ul class="header__links">
             <li class="header__link"><a href="../../../index.html">Home</a></li>
             <li class="header__link"><a href="./index.html">Games</a></li>
@@ -64,6 +64,7 @@
           </div>
         </div>
       </header>
+      
           <main>
             <section class="filter">
                 <div class="filter__wrap">
@@ -93,10 +94,10 @@
                     </div>
                     <div class="adding__inputs">
                       <form action="">
-                        <input id="adding-name" class="adding__form-inpt" type="text" , placeholder="Game name" />
-                        <input id="adding-description" class="adding__form-inpt" type="text" , placeholder="Game description" />
-                        <input id="adding-review" class="adding__form-inpt" type="text" , placeholder="Game review" />
-                        <input id="adding-image" class="adding__form-inpt" type="text" , placeholder="Game image" />
+                        <input id="adding-name" class="adding__form-inpt" type="text" placeholder="Game name"/>
+                        <input id="adding-description" class="adding__form-inpt" type="text" placeholder="Game description"/>
+                        <input id="adding-review" class="adding__form-inpt" type="text" placeholder="Game review"/>
+                        <input id="adding-image" class="adding__form-inpt" type="text" placeholder="Game image"/>
                     </form>
                     <button type="submit" class="adding__form-btn">Add New Game</button>
                     </div>
@@ -105,8 +106,8 @@
             </section>
 
             <section class="content">
-                <div class="content__radius-left"></div>
-                <div class="content__radius-right"></div>
+                <!-- <div class="content__radius-left"></div>
+                <div class="content__radius-right"></div> -->
                 <ul class="content__grid__list"></ul> 
                 <div class="background-blur hidden-background-blur"></div>
                 <div class="game-dialog modal hidden">
@@ -114,20 +115,26 @@
                     <img class="game-dialog__img" src="../../Assets/images/Games/battlefield.png" alt="">
                     <div class="game-dialog__content">
                       <div class="content__main">
-                        <h3 class="game-dialog__game-name">${gameName}</h3>
-                        <p class="game-dialog__game-description">${gameDescription}</p>
+                        <h3 class="game-dialog__game-name">game-name</h3>
+                        <p class="game-dialog__game-description">game-description</p>
                       </div>
                       <div class="content__review">
                         <div class="content__review-user">
                           <img src="../../Assets/icons/DialogUsernameImg.svg" alt="" />
                           <div class="content__review-name">
-                            <p class="game-dialog__user-name">${userName}</p>
-                            <h3 class="game-dialog__user-review">${userReview}</h3>
+                            <p class="game-dialog__user-name">user-name</p>
+                            <h3 class="game-dialog__user-review">user-review</h3>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div> 
+                </div>
+                <div class="content__empty-games">
+                  <div class="content__empty-games-wrap">
+                    <h1>Empty Games</h1>
+                    <p><button class="content__empty-games__sign-in-btn">Sign in</button> for adding games</p>
+                  </div>
                 </div>
             </section>
 
@@ -182,7 +189,7 @@
           </footer>
     </div>
 
-    <script src="./script.js"></script>
+    <script src="../../scripts/navigationMobile.js"></script>
     <script type="module" src="../../scripts/footerSearch.js"></script>
     <script type="module" src="../../scripts/signIn.js"></script>
     <script type="module" src="../../scripts/dialogSignInDatas.js"></script>
@@ -190,7 +197,6 @@
     <script type="module" src="../../scripts/dialogAddNewCard.js"></script>
     <script type="module" src="../../scripts/paginationList.js"></script>
     <script type="module" src="../../scripts/authedHeader.js"></script>
-    <script type="module" src="../../mocks/cards.js"></script>
     <script type="module" src="../../scripts/headerSticky.js"></script>
 </body>
 </html>

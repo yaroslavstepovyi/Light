@@ -1,5 +1,4 @@
 import { USERS } from "../mocks/users.js";
-import { handleBtnDotsClick } from "../scripts/usersRoleModal.js";
 
 const initialUsers = [...USERS];
 const usersTableRowsList = document.querySelector(".users__datas-table");
@@ -22,7 +21,7 @@ const renderItem = (user) =>{
             <button type="submit" class="users__btn-dots">
                 <img class="users__datas-dots" src="../../../Assets/icons/users-three-dots.svg" alt="">
             </button>
-            <div class="role">
+            <div class="role hidden">
                 <ul class="role__lists">
                     <li class="role__list"><button><p>Send email</p></button></li>
                     <li class="role__list"><button><p>Change Role</p></button></li>
@@ -54,7 +53,6 @@ const renderList = (element, list) =>{
 renderList(usersTableRowsList, USERS);
 
 //default users order:
-
 const handleBtnReset = () =>{
     usersTableRowsList.innerHTML = `
     <tbody>
@@ -75,8 +73,6 @@ const handleBtnReset = () =>{
 }
 
 //sort:
-
-
 const handleRoleSelect = (e) =>{
     usersTableRowsList.innerHTML = `
     <tbody>
@@ -117,3 +113,13 @@ const handleRoleSelect = (e) =>{
 }
 
 usersFilterSearchSelect.addEventListener("change", handleRoleSelect);
+
+
+const usersBtnDots = document.querySelectorAll(".users__btn-dots");
+const role = document.querySelector(".role");
+
+const handleBtnDotsClick = () =>{
+    role.classList.toggle("hidden");
+}
+
+usersBtnDots.forEach((btn) => {btn.addEventListener("click", handleBtnDotsClick)});

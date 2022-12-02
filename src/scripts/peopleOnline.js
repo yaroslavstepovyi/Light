@@ -24,6 +24,7 @@ const renderList = (element, list, className) =>{
         divElement.classList.add(className);
         divElement.style.display = "flex";
         divElement.style.marginLeft = "-5px";
+        divElement.style.paddingLeft = "5px";
         
 
         return divElement;

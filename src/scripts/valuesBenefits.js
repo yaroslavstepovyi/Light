@@ -26,7 +26,7 @@ const renderList = (element, list) =>{
         divElement.style.flexWrap = "wrap";
         divElement.style.justifyContent = "space-between";
         divElement.style.width = "112px";
-        //divElement.style.gap = "10px";
+        divElement.style.gap = "10px";
         
 
        

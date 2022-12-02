@@ -8,8 +8,8 @@ const handleScrollHeader = () =>{
         header.style.background = "rgba(14, 14, 14, 1)";
         headerRadius.style.display = "none";
     }else{
-        headerRadius.style.display = "";
         header.style.background = "";
+        headerRadius.style.display = "";
     }
 }
 
