@@ -506,7 +506,6 @@ body {
 }
 
 .users__datas-wrap {
-  position: relative;
   width: 100%;
   text-align: -webkit-center;
 }
@@ -532,7 +531,6 @@ body {
 }
 
 .users__datas-table td {
-  position: relative;
   vertical-align: middle;
 }
 
@@ -547,8 +545,11 @@ body {
   cursor: pointer;
 }
 
-.users__btn-dots {
+.users__datas-user-action {
   position: relative;
+}
+
+.users__btn-dots {
   padding: 8px 14px;
   background: transparent;
   border-color: transparent;
@@ -563,8 +564,8 @@ body {
 /* role */
 
 .role {
-  display: flex;
   position: absolute;
+  display: flex;
   flex-direction: column;
   align-items: center;
   width: 124px;
@@ -572,8 +573,8 @@ body {
   padding-right: 16px;
   padding-left: 16px;
   padding-bottom: 16px;
-  top: 70px;
-  right: 90px;
+  top: 18px;
+  right: 67px;
   background: #000000;
   border: 1px solid #bc3cd8;
   border-radius: 6px;
@@ -888,9 +889,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .header__nav {
   }
 
   .header__nav-small {

@@ -9,30 +9,30 @@ const selectId = document.getElementById("select");
 
 const renderItem = (user) =>{
     const rowElement = document.createElement("tr");
-
+    rowElement.classList.add("users__datas-row");
+    
     rowElement.innerHTML = `
         <td><img class="users__datas-user-img" src="../../../Assets/icons/${user.img}.svg" alt=${user.name}></td>
-        <td><span>${user.name}</span></td>
-        <td><span>${user.country}</span></td>
-        <td><span>${user.age}</span></td>
-        <td><span>${user.email}</span></td>
-        <td><span>${user.role}</span></th>
-        <td>
+        <td class="users__datas-user-name">${user.name}</td>
+        <td class="users__datas-user-country">${user.country}</td>
+        <td class="users__datas-user-age">${user.age}</td>
+        <td class="users__datas-user-email">${user.email}</td>
+        <td class="users__datas-user-role">${user.role}</th>
+        <td class="users__datas-user-action">
             <button type="submit" class="users__btn-dots">
                 <img class="users__datas-dots" src="../../../Assets/icons/users-three-dots.svg" alt="">
             </button>
             <div class="role hidden">
                 <ul class="role__lists">
-                    <li class="role__list"><button><p>Send email</p></button></li>
-                    <li class="role__list"><button><p>Change Role</p></button></li>
-                    <li class="role__list"><button><p>Block</p></button></li>
-                    <li class="role__list"><button><p>Delete</p></button></li>
+                    <li class="role__list role__list-email"><button>Send email</button></li>
+                    <li class="role__list role__list-role"><button>Change Role</button></li>
+                    <li class="role__list role__list-block"><button>Block</button></li>
+                    <li class="role__list role__list-delete"><button>Delete</button></li>
                 </ul>
             </div>
         </td>
     `;
  
-
     return rowElement;
 };
 
@@ -122,4 +122,7 @@ const handleBtnDotsClick = () =>{
     role.classList.toggle("hidden");
 }
 
-usersBtnDots.forEach((btn) => {btn.addEventListener("click", handleBtnDotsClick)});
+usersBtnDots.forEach((btn) => {
+    btn.addEventListener("click", handleBtnDotsClick);
+});
+

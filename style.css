@@ -455,6 +455,11 @@ body {
   background: linear-gradient(rgb(192, 51, 223), rgb(185, 53, 123));
 }
 
+.hero__left-btn-mail {
+  text-decoration: none;
+  color: var(--perfect-white);
+}
+
 .hero__left-text {
   text-decoration: none;
   font-weight: 700;
