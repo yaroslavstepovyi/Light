@@ -10,6 +10,7 @@ const logOutBtn = document.querySelector(".log-out-btn");
 const userMenu = document.querySelector(".authed__header__nav-menu-wrap");
 const signInEmail = document.getElementById("sign-in-email");
 const signInPassword = document.getElementById("sign-in-password");
+const contentEmptyGames = document.querySelector(".content__empty-games");
 
 const changeHeader = () =>{
     const user = JSON.parse(localStorage.getItem("user"));
@@ -29,37 +30,40 @@ const resetInputsField = () =>{
     signInPassword.value="";
 }
 
-const checkInputPass = () =>{
+const checkInputPassword = () =>{
     if(signInPassword.value.length < 6){
         alert("password is requiered minimum 6 symbols");
     }
 }
 
+const isUserSignIn = () =>{
+    const email = document.getElementById("sign-in-email").value;
+    const password = document.getElementById("sign-in-password").value;
+    const user = USERS.find((user) => user.email === email && user.password === password);
+
+    if(user){
+        localStorage.setItem("user", JSON.stringify(user));
+        elementBody.style.overflow = "";
+        signIn.classList.add("hidden");
+        backgroundBlur.classList.add("hidden-background-blur");
+        resetInputsField();
+        changeHeader();
+    }else{
+        alert("invalid email or password");
+        checkInputPassword();
+    }
+}
+
 const handleSignInFormBtn = (e) =>{
         e.preventDefault();
-    
-        const email = document.getElementById("sign-in-email").value;
-        const password = document.getElementById("sign-in-password").value;
-        const user = USERS.find((user) => user.email === email && user.password === password);
-
-        if(user){
-            localStorage.setItem("user", JSON.stringify(user));
-            elementBody.style.overflow = "";
-            signIn.classList.add("hidden");
-            backgroundBlur.classList.add("hidden-background-blur");
-            resetInputsField();
-            changeHeader();
-        }else{
-            alert("invalid email or password");
-            checkInputPass();
-        }
+        isUserSignIn();
 }
 
 signInFormBtn.addEventListener("click", handleSignInFormBtn);
 
-
 const handleLogOut = () =>{
     userMenu.classList.add("hidden");
+    // contentEmptyGames.style.display = "flex";
     localStorage.setItem("user", null);
     changeHeader();
 }

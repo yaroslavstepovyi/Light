@@ -2,7 +2,7 @@ const heroLeftText = document.querySelector(".hero__left-text");
 
 const handleEexploreDeviceClick = (e) =>{
     e.preventDefault();
-    console.log("EexploreDeviceClick");
+    console.log("ExploreDeviceClick");
 }
 
 heroLeftText.addEventListener("click", handleEexploreDeviceClick);

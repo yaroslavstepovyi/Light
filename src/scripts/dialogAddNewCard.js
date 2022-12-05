@@ -12,22 +12,11 @@ const selectId = document.getElementById("select");
 const gameDialog = document.querySelector(".game-dialog");
 const paginationList = document.querySelector(".pagination__list");
 const contentEmptyGames = document.querySelector(".content__empty-games");
-
+const filter = document.querySelector(".filter");
 
 const cards = JSON.parse(localStorage.getItem("cards")) || [];
+const authedUser = JSON.parse(localStorage.getItem('user'));
 const initialCards = [...cards];
-
-//render card dialog:
-const handleClickCard = (card) =>{
-    gameDialog.classList.remove("hidden");
-    backgroundBlur.classList.remove("hidden-background-blur");
-  
-    document.querySelector(".game-dialog__img").src = `../../Assets/images/Games/${card.img}.png`;
-    document.querySelector(".game-dialog__game-name").innerHTML = card.name;
-    document.querySelector(".game-dialog__game-description").innerHTML = card.description;
-    document.querySelector(".game-dialog__user-name").innerHTML = card.userName;
-    document.querySelector(".game-dialog__user-review").innerHTML = card.review;
-}
 
 //render game card:
 const renderItem = (card) =>{
@@ -46,7 +35,7 @@ const renderItem = (card) =>{
                 <span class="game-description">${card.description}</span>
             </div>
             <div class="content__grid-item-description-right">
-                <h3 class="user-name">userName</h3>
+                <h3 class="user-name">${authedUser.name}</h3>
                 <span class="user-review">${card.review}</span>
             </div>
         </div>
@@ -75,6 +64,18 @@ const renderList = (element, list) => {
     element.appendChild(completeDivElement);
 }
 
+//render card dialog:
+const handleClickCard = (card) =>{
+    gameDialog.classList.remove("hidden");
+    backgroundBlur.classList.remove("hidden-background-blur");
+  
+    document.querySelector(".game-dialog__img").src = `../../Assets/images/Games/${card.img}.png`;
+    document.querySelector(".game-dialog__game-name").innerHTML = card.name;
+    document.querySelector(".game-dialog__game-description").innerHTML = card.description;
+    document.querySelector(".game-dialog__user-name").innerHTML = authedUser.name;
+    document.querySelector(".game-dialog__user-review").innerHTML = card.review;
+}
+
 const resetInputsField = () =>{
     addingName.value = "";
     addingDescription.value="";
@@ -84,17 +85,22 @@ const resetInputsField = () =>{
 
 const closeGameDialog = () =>{
     addingModal.classList.add("hidden");
+    gameDialog.classList.add("hidden");
     backgroundBlur.classList.add("hidden-background-blur");
     resetInputsField();
 }
 
+paginationList.style.display = "none";
+contentEmptyGames.style.display = "flex";
+filter.style.display = "none";
+
 const checkEmptyGames = () =>{
-    if(cards.length === 0){
-        paginationList.style.display = "none";
-        contentEmptyGames.style.display = "flex";
-    }else{
+    const isUser = JSON.parse(localStorage.getItem('user'));
+
+    if(isUser){
         paginationList.style.display = "flex";
         contentEmptyGames.style.display = "none";
+        filter.style.display = "block";
     }
 }
 

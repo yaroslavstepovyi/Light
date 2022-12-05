@@ -1,4 +1,5 @@
 export const USERS =[{
+    id: "1",
     img: "users-page-users-icon",
     name: "Abe Fukuda",
     country: "Japan",
@@ -7,7 +8,7 @@ export const USERS =[{
     password: "testtest",
     role: "moderator",
 },
-{
+{   id: "2",
     img: "userOnline1",
     name: "Aki Fukumoto",
     country: "China",
@@ -16,7 +17,7 @@ export const USERS =[{
     password: "123123",
     role: "admin",
 },
-{
+{   id: "3",
     img: "userOnline2",
     name: "Hayao Miyazaki",
     country: "Japan",
@@ -25,7 +26,7 @@ export const USERS =[{
     password: "123123",
     role: "user",
 },
-{
+{   id: "4",
     img: "userOnline4",
     name: "Eto Hirabajashi",
     country: "Taiwan",
@@ -34,7 +35,7 @@ export const USERS =[{
     password: "123123",
     role: "user",
 },
-{
+{   id: "5",
     img: "userOnline3",
     name: "Volodymyr Zelsky",
     country: "Ukraine",
