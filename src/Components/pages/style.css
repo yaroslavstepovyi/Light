@@ -859,7 +859,7 @@ body {
   font-weight: 600;
   font-size: 21px;
   line-height: 32px;
-  text-align: center;
+  /* text-align: center; */
   text-decoration-line: underline;
   color: #ffffff;
   word-wrap: break-word;

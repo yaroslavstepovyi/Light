@@ -10,7 +10,31 @@ const logOutBtn = document.querySelector(".log-out-btn");
 const userMenu = document.querySelector(".authed__header__nav-menu-wrap");
 const signInEmail = document.getElementById("sign-in-email");
 const signInPassword = document.getElementById("sign-in-password");
+const paginationList = document.querySelector(".pagination__list");
 const contentEmptyGames = document.querySelector(".content__empty-games");
+const filter = document.querySelector(".filter");
+const contentGridList = document.querySelector(".content__grid__list");
+
+
+//switch empty games to filter and pagination
+const checkEmptyGames = () =>{
+    const loggedUser = JSON.parse(localStorage.getItem('user'));
+
+    if(loggedUser || loggedUser != null){
+        paginationList.style.display = "flex";
+        contentEmptyGames.style.display = "none";
+        filter.style.display = "block";
+        contentGridList.style.display = "flex";
+    }
+
+    if(!loggedUser || loggedUser === null){
+        paginationList.style.display = "none";
+        contentEmptyGames.style.display = "flex";
+        filter.style.display = "none";
+        contentGridList.style.display = "none";
+    }
+    
+}
 
 const changeHeader = () =>{
     const user = JSON.parse(localStorage.getItem("user"));
@@ -55,17 +79,18 @@ const isUserSignIn = () =>{
 }
 
 const handleSignInFormBtn = (e) =>{
-        e.preventDefault();
+        // e.preventDefault();
         isUserSignIn();
+        checkEmptyGames();
 }
 
 signInFormBtn.addEventListener("click", handleSignInFormBtn);
 
 const handleLogOut = () =>{
     userMenu.classList.add("hidden");
-    // contentEmptyGames.style.display = "flex";
     localStorage.setItem("user", null);
     changeHeader();
+    checkEmptyGames();
 }
 
 logOutBtn.addEventListener("click", handleLogOut);
@@ -73,4 +98,5 @@ logOutBtn.addEventListener("click", handleLogOut);
 
 window.addEventListener("DOMContentLoaded", () =>{
     changeHeader();
+    checkEmptyGames();
 });

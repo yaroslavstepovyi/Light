@@ -49,7 +49,7 @@ const renderItem = (card) =>{
 }
 
 //render game card list:
-const renderList = (element, list) => {
+export const renderList = (element, list) => {
     const divElement = document.createElement("div");
     divElement.classList.add("content__div-item");
     divElement.style.display = "flex";
@@ -100,12 +100,24 @@ const handleAddNewGame = (e) =>{
     const addingDescription = document.getElementById("adding-description").value;
     const addingReview = document.getElementById("adding-review").value;
     const addingImage = document.getElementById("adding-image").value;
-
     
+    const addedCards = [{name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()}];
+
+    if(addingImage === "default"){
+        alert("Select game image");
+        return;
+    } 
+
+    for(let i = 0; i < cards.length; i++){
+        if(cards[i].img === addingImage){
+            alert("such game already added");
+            return;
+        }
+    }
+
     cards.push({name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()});
     localStorage.setItem("cards", JSON.stringify(cards));
 
-    const addedCards = [{name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()}];
 
     renderList(contentDivItem, addedCards);
     closeGameDialog();
@@ -169,10 +181,6 @@ const handleSortCards = (e) =>{
 }
 
 filterSearchBoxView.addEventListener("change", handleSortCards);
-
-const cardGameContentStyle = () =>{
-
-}
 
 window.addEventListener("DOMContentLoaded", () =>{
     renderList(cardsList, cards, "content__grid");
