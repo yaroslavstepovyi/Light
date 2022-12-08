@@ -18,6 +18,7 @@ const cards = JSON.parse(localStorage.getItem("cards")) || [];
 const authedUser = JSON.parse(localStorage.getItem('user'));
 const initialCards = [...cards];
 
+
 //render game card:
 const renderItem = (card) =>{
     const liElement = document.createElement("li");
@@ -50,6 +51,7 @@ const renderItem = (card) =>{
 //render game card list:
 const renderList = (element, list) => {
     const divElement = document.createElement("div");
+    divElement.classList.add("content__div-item");
     divElement.style.display = "flex";
     divElement.style.justifyContent = "center";
     divElement.style.flexWrap = "wrap";
@@ -90,36 +92,43 @@ const closeGameDialog = () =>{
     resetInputsField();
 }
 
-paginationList.style.display = "none";
-contentEmptyGames.style.display = "flex";
-filter.style.display = "none";
-
-const checkEmptyGames = () =>{
-    const isUser = JSON.parse(localStorage.getItem('user'));
-
-    if(isUser){
-        paginationList.style.display = "flex";
-        contentEmptyGames.style.display = "none";
-        filter.style.display = "block";
-    }
-}
-
 const handleAddNewGame = (e) =>{
     e.preventDefault();
+    const contentDivItem = document.querySelector(".content__div-item");
     
     const addingName = document.getElementById("adding-name").value;
     const addingDescription = document.getElementById("adding-description").value;
     const addingReview = document.getElementById("adding-review").value;
     const addingImage = document.getElementById("adding-image").value;
-    closeGameDialog();
+
     
     cards.push({name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()});
     localStorage.setItem("cards", JSON.stringify(cards));
-    renderList(cardsList, cards);
-    checkEmptyGames();
-    toggleEmptyGames();
+
+    const addedCards = [{name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()}];
+
+    renderList(contentDivItem, addedCards);
+    closeGameDialog();
 }
 addingFormBtn.addEventListener("click", handleAddNewGame);
+
+// renderList(cardsList, cards);
+
+paginationList.style.display = "none";
+contentEmptyGames.style.display = "flex";
+filter.style.display = "none";
+
+const checkEmptyGames = () =>{
+    const loggedUser = JSON.parse(localStorage.getItem('user'));
+
+    if(loggedUser != null){
+        paginationList.style.display = "flex";
+        contentEmptyGames.style.display = "none";
+        filter.style.display = "block";
+    }
+}
+// checkEmptyGames();
+
 
 const handleClickBackground = () =>{
     resetInputsField();
@@ -161,11 +170,11 @@ const handleSortCards = (e) =>{
 
 filterSearchBoxView.addEventListener("change", handleSortCards);
 
-const keepCardsInLocalStorage = () =>{
-    return renderList(cardsList, cards);
-} 
+const cardGameContentStyle = () =>{
+
+}
 
 window.addEventListener("DOMContentLoaded", () =>{
-    keepCardsInLocalStorage();
+    renderList(cardsList, cards, "content__grid");
     checkEmptyGames();
 });

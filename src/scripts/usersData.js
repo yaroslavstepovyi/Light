@@ -90,20 +90,19 @@ const dialogRoleShow = () =>{
             }
 
             rightChangeRole[elem].addEventListener("click", function showRightRole(e){
-                console.log()
-                console.log("from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:", "to-name:",);
+                console.log("change role:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:", "to-name:",);
             })
 
             rightBlock[elem].addEventListener("click", (e) => {     
-                console.log("from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
+                console.log("block:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
             })
 
             rightDelete[elem].addEventListener("click", (e) => {
-                console.log("from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
+                console.log("delete:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
             })
 
             rightSendEmail[elem].addEventListener("click", (e) => {
-                console.log("from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
+                console.log("send email:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
             })
 
             backgroundTransparent.classList.toggle("hidden");

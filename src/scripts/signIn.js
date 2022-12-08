@@ -13,7 +13,7 @@ headerNavBtn.addEventListener("click", handleHeaderNavBtnClick);
 
 backgroundBlur.addEventListener ("click", () => {
     signIn.classList.add("hidden");
-    backgroundBlur.classList.add("hidden");
+    backgroundBlur.classList.add("hidden-background-blur");
     elementBody.style.overflow = "";
 });
 
