@@ -888,6 +888,7 @@ body {
 
 .pagination__list ul {
   display: flex;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
@@ -915,23 +916,7 @@ body {
 }
 
 .pagination__list-btn:first-child button {
-  padding: 6px 4px;
-  width: 32px;
-  height: 32px;
   background: #919eab;
-  border: 1px solid #dfe3e8;
-  border-radius: 4px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.pagination__list-btn:first-child:hover button {
-  background: #919eab;
-  border: 1px solid #dfe3e8;
 }
 
 .pagination__list-btn:first-child img:hover {
@@ -939,14 +924,18 @@ body {
     brightness(90%) contrast(129%);
 }
 
-.pagination__list-btn button:hover,
-.pagination__list-btn--active button {
-  color: #4200ff;
-  border: 1px solid #4200ff;
+.pagination__list-btn button:hover{
+  color: #BC3CD8;
+  border: 1px solid #BC3CD8;
 }
 
-.pagination__list-btn img:hover,
-.pagination__list-btn--active button img {
+.active{
+  color: #BC3CD8;
+  border-radius: 6px;
+  border: 1px solid #BC3CD8;
+}
+
+.pagination__list-btn img:hover {
   filter: invert(10%) sepia(99%) saturate(7274%) hue-rotate(261deg)
     brightness(90%) contrast(129%);
 }

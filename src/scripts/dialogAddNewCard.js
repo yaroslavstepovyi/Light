@@ -131,7 +131,7 @@ contentEmptyGames.style.display = "flex";
 filter.style.display = "none";
 
 const checkEmptyGames = () =>{
-    const loggedUser = JSON.parse(localStorage.getItem('user'));
+    const loggedUser = JSON.parse(localStorage.getItem("user"));
 
     if(loggedUser != null){
         paginationList.style.display = "flex";
@@ -182,7 +182,60 @@ const handleSortCards = (e) =>{
 
 filterSearchBoxView.addEventListener("change", handleSortCards);
 
+const contentGridList = document.querySelector(".content__grid__list");
+const paginationListBtns = document.querySelector(".pagination__list-btns");
+
+const pagination = () =>{
+    let notesOnPage = 4;                                                                      
+    
+    const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
+
+    let items = [];
+    for(let i = 1; i <= amountElementOnPage; i++){
+        const li = document.createElement("li");
+        li.classList.add("pagination__list-btn");
+
+        const button = document.createElement("button");
+        button.classList.add("pagination__list-btn-page");
+        li.appendChild(button);
+        button.innerHTML = i;
+        paginationListBtns.appendChild(li);
+        items.push(button);
+    }
+
+    let active;
+    showPage(items[0]);
+
+    const paginationListBtn = document.querySelectorAll(".pagination__list-btn-page");
+
+    for(let item of paginationListBtn){
+        item.addEventListener("click", function(){
+            showPage(this);
+        })
+    }
+
+    function showPage(elem) {
+        if(active){
+            active.classList.remove("active");
+        }
+        
+        active = elem;
+        elem.classList.add("active");
+    
+        let pageNum = +elem.innerHTML;
+        let start = (pageNum - 1) * notesOnPage;
+        let end = start + notesOnPage;
+        let notes = JSON.parse(localStorage.getItem('cards')).slice(start, end);
+    
+        contentGridList.innerHTML = "";
+    
+        renderList(cardsList, notes);      
+    }
+}
+pagination();
+
 window.addEventListener("DOMContentLoaded", () =>{
-    renderList(cardsList, cards, "content__grid");
+    //renderList(cardsList, cards, "content__grid");
     checkEmptyGames();
 });
+

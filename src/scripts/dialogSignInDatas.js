@@ -18,22 +18,23 @@ const contentGridList = document.querySelector(".content__grid__list");
 
 //switch empty games to filter and pagination
 const checkEmptyGames = () =>{
-    const loggedUser = JSON.parse(localStorage.getItem('user'));
+    const loggedUser = JSON.parse(localStorage.getItem("user"));
+    const gamesInLocalStorage = JSON.parse(localStorage.getItem("cards"));
 
-    if(loggedUser || loggedUser != null){
+    //TODO: content, filter, grid = null ! fix it 
+    if(loggedUser != null){
         paginationList.style.display = "flex";
         contentEmptyGames.style.display = "none";
         filter.style.display = "block";
         contentGridList.style.display = "flex";
     }
 
-    if(!loggedUser || loggedUser === null){
+    if(!loggedUser || loggedUser === null && gamesInLocalStorage){
         paginationList.style.display = "none";
         contentEmptyGames.style.display = "flex";
         filter.style.display = "none";
         contentGridList.style.display = "none";
-    }
-    
+    } 
 }
 
 const changeHeader = () =>{
@@ -78,10 +79,9 @@ const isUserSignIn = () =>{
     }
 }
 
-const handleSignInFormBtn = (e) =>{
-        // e.preventDefault();
-        isUserSignIn();
-        checkEmptyGames();
+const handleSignInFormBtn = () =>{
+    isUserSignIn();
+    checkEmptyGames();
 }
 
 signInFormBtn.addEventListener("click", handleSignInFormBtn);

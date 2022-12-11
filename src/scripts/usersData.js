@@ -65,6 +65,59 @@ const renderList = (element, list) =>{
 
 renderList(usersTableRowsList, USERS);
 
+const contentGridList = document.querySelector(".users__datas-row");
+const paginationListBtns = document.querySelector(".pagination__list-btns");
+
+const pagination = () =>{
+    let notesOnPage = 5;                                                                      
+    
+    const amountElementOnPage = Math.ceil(USERS.length / (notesOnPage));
+
+    let items = [];
+    for(let i = 1; i <= amountElementOnPage; i++){
+        const li = document.createElement("li");
+        li.classList.add("pagination__list-btn");
+
+        const button = document.createElement("button");
+        button.classList.add("pagination__list-btn-page");
+        li.appendChild(button);
+        button.innerHTML = i;
+        paginationListBtns.appendChild(li);
+        items.push(button);
+    }
+
+    let active;
+    showPage(items[0]);
+
+    const paginationListBtn = document.querySelectorAll(".pagination__list-btn-page");
+
+    for(let item of paginationListBtn){
+        item.addEventListener("click", function(){
+            showPage(this);
+        })
+    }
+
+    function showPage(elem) {
+        if(active){
+            active.classList.remove("active");
+        }
+        
+        active = elem;
+        elem.classList.add("active");
+    
+        let pageNum = +elem.innerHTML;
+        let start = (pageNum - 1) * notesOnPage;
+        let end = start + notesOnPage;
+        let notes = USERS.slice(start, end);
+    
+        contentGridList.innerHTML = "";
+    
+        renderList(usersTableRowsList, notes);      
+    }
+}
+
+pagination();
+
 const dialogRoleShow = () =>{
     const userRole = JSON.parse(localStorage.getItem("user")).role;
     const userLogged = JSON.parse(localStorage.getItem("user"));
@@ -78,7 +131,7 @@ const dialogRoleShow = () =>{
     for(let elem in usersBtnDots){
         usersBtnDots[elem].addEventListener("click", () =>{
             role[elem].classList.toggle("hidden");
-
+            
             if(userRole === "moderator"){
                 rightDelete[elem].classList.add("hidden");
             }
@@ -106,15 +159,16 @@ const dialogRoleShow = () =>{
             })
 
             backgroundTransparent.classList.toggle("hidden");
-            })
+            
+            })        
 
         backgroundTransparent.addEventListener("click", () =>{
             backgroundTransparent.classList.add("hidden");
             role[elem].classList.add("hidden");
         })
     }
-}
 
+}
 
 //default users order:
 const handleBtnReset = () =>{
@@ -151,3 +205,4 @@ const handleRoleSelect = (e) =>{
 usersFilterSearchSelect.addEventListener("change", handleRoleSelect);
 
 dialogRoleShow ();
+
