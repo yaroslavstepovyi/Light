@@ -92,25 +92,76 @@ const closeGameDialog = () =>{
     resetInputsField();
 }
 
+const contentGridList = document.querySelector(".content__grid__list");
+const paginationListBtns = document.querySelector(".pagination__list-btns");
+
+const pagination = () =>{
+    let notesOnPage = 12;                                                                      
+    
+    const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
+
+    let items = [];
+    for(let i = 1; i <= amountElementOnPage; i++){
+        const li = document.createElement("li");
+
+        li.classList.add("pagination__list-btn");
+        const button = document.createElement("button");
+        button.classList.add("pagination__list-btn-page");
+        li.appendChild(button);
+        button.innerHTML = i;
+        paginationListBtns.appendChild(li);
+        items.push(button);
+    }
+
+    let active;
+    showPage(items[0]);
+
+    for(let item of items){
+        item.addEventListener("click", function(){
+            showPage(this);
+        })
+    }
+
+    function showPage(elem) {
+        if(active){
+            active.classList.remove("active");
+        }
+        
+        active = elem;
+        elem.classList.add("active");
+    
+        let pageNum = +elem.innerHTML;
+        let start = (pageNum - 1) * notesOnPage;
+        let end = start + notesOnPage;
+        let notes = JSON.parse(localStorage.getItem('cards')).slice(start, end);
+    
+        contentGridList.innerHTML = "";
+    
+        renderList(cardsList, notes);      
+    }
+    
+    closeGameDialog();
+}
+
 const handleAddNewGame = (e) =>{
     e.preventDefault();
+
     const contentDivItem = document.querySelector(".content__div-item");
-    
     const addingName = document.getElementById("adding-name").value;
     const addingDescription = document.getElementById("adding-description").value;
     const addingReview = document.getElementById("adding-review").value;
     const addingImage = document.getElementById("adding-image").value;
+
+    if(addingImage === "default"){
+        alert("choose the image from the list");
+        return;
+    }
     
     const addedCards = [{name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()}];
 
-    if(addingImage === "default"){
-        alert("Select game image");
-        return;
-    } 
-
     for(let i = 0; i < cards.length; i++){
         if(cards[i].img === addingImage){
-            alert("such game already added");
+            alert("such game already exist");
             return;
         }
     }
@@ -118,6 +169,8 @@ const handleAddNewGame = (e) =>{
     cards.push({name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()});
     localStorage.setItem("cards", JSON.stringify(cards));
 
+    
+    pagination();
 
     renderList(contentDivItem, addedCards);
     closeGameDialog();
@@ -133,14 +186,14 @@ filter.style.display = "none";
 const checkEmptyGames = () =>{
     const loggedUser = JSON.parse(localStorage.getItem("user"));
 
-    if(loggedUser != null){
+    if(loggedUser){
         paginationList.style.display = "flex";
         contentEmptyGames.style.display = "none";
         filter.style.display = "block";
     }
 }
-// checkEmptyGames();
 
+// checkEmptyGames();
 
 const handleClickBackground = () =>{
     resetInputsField();
@@ -155,7 +208,7 @@ const handleBtnReset = () =>{
     resetButton.style.display = "none";
     selectId.value = "default";
 
-    renderList(cardsList, initialCards, "content__grid");
+    renderList(cardsList, initialCards);
 }
 
 //sort cards by date:
@@ -182,60 +235,9 @@ const handleSortCards = (e) =>{
 
 filterSearchBoxView.addEventListener("change", handleSortCards);
 
-const contentGridList = document.querySelector(".content__grid__list");
-const paginationListBtns = document.querySelector(".pagination__list-btns");
-
-const pagination = () =>{
-    let notesOnPage = 4;                                                                      
-    
-    const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
-
-    let items = [];
-    for(let i = 1; i <= amountElementOnPage; i++){
-        const li = document.createElement("li");
-        li.classList.add("pagination__list-btn");
-
-        const button = document.createElement("button");
-        button.classList.add("pagination__list-btn-page");
-        li.appendChild(button);
-        button.innerHTML = i;
-        paginationListBtns.appendChild(li);
-        items.push(button);
-    }
-
-    let active;
-    showPage(items[0]);
-
-    const paginationListBtn = document.querySelectorAll(".pagination__list-btn-page");
-
-    for(let item of paginationListBtn){
-        item.addEventListener("click", function(){
-            showPage(this);
-        })
-    }
-
-    function showPage(elem) {
-        if(active){
-            active.classList.remove("active");
-        }
-        
-        active = elem;
-        elem.classList.add("active");
-    
-        let pageNum = +elem.innerHTML;
-        let start = (pageNum - 1) * notesOnPage;
-        let end = start + notesOnPage;
-        let notes = JSON.parse(localStorage.getItem('cards')).slice(start, end);
-    
-        contentGridList.innerHTML = "";
-    
-        renderList(cardsList, notes);      
-    }
-}
-pagination();
-
 window.addEventListener("DOMContentLoaded", () =>{
-    //renderList(cardsList, cards, "content__grid");
+    // renderList(cardsList, cards, "content__grid");
     checkEmptyGames();
+    pagination();
 });
 

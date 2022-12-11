@@ -65,7 +65,7 @@ const renderList = (element, list) =>{
 
 renderList(usersTableRowsList, USERS);
 
-const contentGridList = document.querySelector(".users__datas-row");
+const usersDatasRow = document.querySelector(".users__datas-row");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
 
 const pagination = () =>{
@@ -89,9 +89,7 @@ const pagination = () =>{
     let active;
     showPage(items[0]);
 
-    const paginationListBtn = document.querySelectorAll(".pagination__list-btn-page");
-
-    for(let item of paginationListBtn){
+    for(let item of items){
         item.addEventListener("click", function(){
             showPage(this);
         })
@@ -110,7 +108,7 @@ const pagination = () =>{
         let end = start + notesOnPage;
         let notes = USERS.slice(start, end);
     
-        contentGridList.innerHTML = "";
+        usersDatasRow.innerHTML = "";
     
         renderList(usersTableRowsList, notes);      
     }
@@ -197,8 +195,9 @@ const handleRoleSelect = (e) =>{
             sortedUsers = USERS.sort((a) => a.role === "user" ?  -1 : 0);
             break;
     }
-
+    
     renderList(usersTableRowsList, sortedUsers);
+    
     resetButton.addEventListener("click", handleBtnReset);
 }
 

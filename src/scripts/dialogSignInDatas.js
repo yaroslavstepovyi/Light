@@ -21,7 +21,6 @@ const checkEmptyGames = () =>{
     const loggedUser = JSON.parse(localStorage.getItem("user"));
     const gamesInLocalStorage = JSON.parse(localStorage.getItem("cards"));
 
-    //TODO: content, filter, grid = null ! fix it 
     if(loggedUser != null){
         paginationList.style.display = "flex";
         contentEmptyGames.style.display = "none";
