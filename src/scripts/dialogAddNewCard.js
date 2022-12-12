@@ -96,7 +96,7 @@ const contentGridList = document.querySelector(".content__grid__list");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
 
 const pagination = () =>{
-    let notesOnPage = 12;                                                                      
+    let notesOnPage = 2;                                                                      
     
     const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
 
@@ -137,10 +137,8 @@ const pagination = () =>{
     
         contentGridList.innerHTML = "";
     
-        renderList(cardsList, notes);      
-    }
-    
-    closeGameDialog();
+        renderList(cardsList, notes); 
+    }    
 }
 
 const handleAddNewGame = (e) =>{
@@ -170,10 +168,9 @@ const handleAddNewGame = (e) =>{
     localStorage.setItem("cards", JSON.stringify(cards));
 
     
-    pagination();
-
     renderList(contentDivItem, addedCards);
     closeGameDialog();
+    // pagination();
 }
 addingFormBtn.addEventListener("click", handleAddNewGame);
 

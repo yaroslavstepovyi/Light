@@ -28,7 +28,7 @@ const checkEmptyGames = () =>{
         contentGridList.style.display = "flex";
     }
 
-    if(!loggedUser || loggedUser === null && gamesInLocalStorage){
+    if(!loggedUser || loggedUser === null && gamesInLocalStorage != null){
         paginationList.style.display = "none";
         contentEmptyGames.style.display = "flex";
         filter.style.display = "none";
