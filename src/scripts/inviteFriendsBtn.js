@@ -1,7 +1,7 @@
-const heroLeftBtn = document.querySelector(".hero__left-btn");
+// const heroLeftBtn = document.querySelector(".hero__left-btn");
 
-const handleInviteFriendsClick = () =>{
-    console.log("InviteFriendsClick");
-}
+// const handleInviteFriendsClick = () =>{
+//     console.log("InviteFriendsClick");
+// }
 
-heroLeftBtn.addEventListener("click", handleInviteFriendsClick);
+// heroLeftBtn.addEventListener("click", handleInviteFriendsClick);

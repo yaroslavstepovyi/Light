@@ -14,6 +14,8 @@ const paginationList = document.querySelector(".pagination__list");
 const contentEmptyGames = document.querySelector(".content__empty-games");
 const filter = document.querySelector(".filter");
 const contentGridList = document.querySelector(".content__grid__list");
+const headerNavBtnMobile = document.querySelector(".header__nav-btn-mobile");
+const headerNavBtnMobileLogOut = document.querySelector(".header__nav-btn-mobile__log-out");
 
 
 //switch empty games to filter and pagination
@@ -40,12 +42,16 @@ const changeHeader = () =>{
     const user = JSON.parse(localStorage.getItem("user"));
 
     if(user){
+        headerNavBtnMobileLogOut.classList.remove("hidden");
         authedHeader.style.display = "flex";
-        headerNavBtn.style.display = "none";  
+        headerNavBtn.style.display = "none";          
+        headerNavBtnMobile.style.display = "none";          
     }
     else{
+        headerNavBtnMobileLogOut.classList.add("hidden");
         authedHeader.style.display = "none";
         headerNavBtn.style.display = "flex"; 
+        headerNavBtnMobile.style.display = "flex"; 
     }
 }
 
@@ -94,6 +100,13 @@ const handleLogOut = () =>{
 
 logOutBtn.addEventListener("click", handleLogOut);
 
+const handleHeaderNavBtnMobileLogOut = () =>{
+    localStorage.setItem("user", null);
+    headerNavBtnMobileLogOut.classList.add("hidden");
+    headerNavBtnMobile.style.display = "flex"; 
+}
+
+headerNavBtnMobileLogOut.addEventListener("click", handleHeaderNavBtnMobileLogOut);
 
 window.addEventListener("DOMContentLoaded", () =>{
     changeHeader();

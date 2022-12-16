@@ -8,4 +8,5 @@ const handleHeaderNavBtnClick = () =>{
     backgroundBlur.classList.toggle("hidden-background-blur");
     elementBody.style.overflow = "hidden";
 }
+
 contentEmptyGamesSignInBtn.addEventListener("click", handleHeaderNavBtnClick);

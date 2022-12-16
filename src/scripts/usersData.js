@@ -67,9 +67,9 @@ renderList(usersTableRowsList, USERS);
 
 const usersDatasRow = document.querySelector(".users__datas-row");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
+let notesOnPage = 6;                                                                      
 
 const pagination = () =>{
-    let notesOnPage = 5;                                                                      
     
     const amountElementOnPage = Math.ceil(USERS.length / (notesOnPage));
 
@@ -173,7 +173,7 @@ const handleBtnReset = () =>{
     resetButton.style.display = "none";
     selectId.value = "default";
     
-    renderList(usersTableRowsList, initialUsers);
+    renderList(usersTableRowsList, initialUsers.slice(0, notesOnPage));
 }
 
 //sort:
@@ -196,7 +196,7 @@ const handleRoleSelect = (e) =>{
             break;
     }
     
-    renderList(usersTableRowsList, sortedUsers);
+    renderList(usersTableRowsList, sortedUsers.slice(0, notesOnPage));
     
     resetButton.addEventListener("click", handleBtnReset);
 }

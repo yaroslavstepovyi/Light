@@ -10,8 +10,6 @@ const toggleNavigBtn = () => {
         headerNavMobile.style.display = "none";
         elementBody.style.overflow = "";
     }
-
-    console.log("NavigationBtnClicked");
 };
 
 headerNavMobile.addEventListener("click", toggleNavigBtn)
