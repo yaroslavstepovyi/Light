@@ -685,6 +685,7 @@ body {
   align-self: center;
   max-width: 92px;
   overflow: hidden;
+  height: -webkit-fill-available;
   gap: 6px;
 }
 
@@ -692,6 +693,7 @@ body {
   align-self: center;
   max-width: 92px;
   overflow: hidden;
+  height: -webkit-fill-available;
   gap: 6px;
 }
 
@@ -905,7 +907,7 @@ body {
   width: 32px;
   height: 32px;
   background: #ffffff;
-  border: 1px solid #dfe3e8;
+  /* border: 1px solid #dfe3e8; */
   border-radius: 4px;
   font-style: normal;
   font-weight: 700;
@@ -929,15 +931,15 @@ body {
   border: 1px solid #BC3CD8;
 }
 
+.pagination__list-btn img:hover {
+  filter: invert(10%) sepia(99%) saturate(7274%) hue-rotate(261deg)
+    brightness(90%) contrast(129%);
+}
+
 .active{
   color: #BC3CD8;
   border-radius: 6px;
   border: 1px solid #BC3CD8;
-}
-
-.pagination__list-btn img:hover {
-  filter: invert(10%) sepia(99%) saturate(7274%) hue-rotate(261deg)
-    brightness(90%) contrast(129%);
 }
 
 /* footer */

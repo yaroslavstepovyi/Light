@@ -1,3 +1,6 @@
+import { DEFAULTGAMES } from "../mocks/defaultGames.js";
+
+const body = document.querySelector("body");
 const addingFormBtn = document.querySelector(".adding__form-btn");
 const addingName = document.getElementById("adding-name");
 const addingDescription = document.getElementById("adding-description");
@@ -14,10 +17,9 @@ const paginationList = document.querySelector(".pagination__list");
 const contentEmptyGames = document.querySelector(".content__empty-games");
 const filter = document.querySelector(".filter");
 
-const cards = JSON.parse(localStorage.getItem("cards")) || [];
-const authedUser = JSON.parse(localStorage.getItem('user'));
-const initialCards = [...cards];
 
+const cards = JSON.parse(localStorage.getItem("cards")) || [];
+const authedUser = JSON.parse(localStorage.getItem('user')) || {name: "player name"};
 
 //render game card:
 const renderItem = (card) =>{
@@ -94,19 +96,36 @@ const closeGameDialog = () =>{
 
 const contentGridList = document.querySelector(".content__grid__list");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
+let notesOnPage = 12;            
+
+const notesOfPageDevices = () =>{
+    if(body.clientWidth <= 1312){
+        notesOnPage = 12;
+    }
+    if(body.clientWidth <= 1200){
+        notesOnPage = 9;
+    }
+    if(body.clientWidth <= 921){
+        notesOnPage = 6;
+    }
+    if(body.clientWidth < 576){
+        notesOnPage = 4;
+    }
+}
 
 const pagination = () =>{
-    let notesOnPage = 2;                                                                      
-    
+    notesOfPageDevices();
+
     const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
 
     let items = [];
     for(let i = 1; i <= amountElementOnPage; i++){
         const li = document.createElement("li");
-
         li.classList.add("pagination__list-btn");
+
         const button = document.createElement("button");
         button.classList.add("pagination__list-btn-page");
+
         li.appendChild(button);
         button.innerHTML = i;
         paginationListBtns.appendChild(li);
@@ -144,6 +163,7 @@ const pagination = () =>{
 const handleAddNewGame = (e) =>{
     e.preventDefault();
 
+    const paginationListBtn = document.querySelectorAll(".pagination__list-btn");
     const contentDivItem = document.querySelector(".content__div-item");
     const addingName = document.getElementById("adding-name").value;
     const addingDescription = document.getElementById("adding-description").value;
@@ -166,15 +186,17 @@ const handleAddNewGame = (e) =>{
 
     cards.push({name: addingName, description: addingDescription, review: addingReview, img: addingImage, date: Date.now()});
     localStorage.setItem("cards", JSON.stringify(cards));
-
     
     renderList(contentDivItem, addedCards);
     closeGameDialog();
-    // pagination();
+    pagination();
+
+    for(let i = 0; i <= paginationListBtn.length; i++){
+        paginationListBtn[i].innerHTML = "";
+    }
 }
 addingFormBtn.addEventListener("click", handleAddNewGame);
 
-// renderList(cardsList, cards);
 
 paginationList.style.display = "none";
 contentEmptyGames.style.display = "flex";
@@ -205,7 +227,7 @@ const handleBtnReset = () =>{
     resetButton.style.display = "none";
     selectId.value = "default";
 
-    renderList(cardsList, initialCards);
+    renderList(cardsList, JSON.parse(localStorage.getItem("cards")).slice(0, notesOnPage));
 }
 
 //sort cards by date:
@@ -218,22 +240,32 @@ const handleSortCards = (e) =>{
     switch (sortType) {
         case "new-first": 
             sortedGames = cards.sort((a, b) => a.date - b.date);
-
             break;
         case "new-second":
             sortedGames = cards.sort((a, b) => b.date - a.date);
             break;        
         }
+        renderList(cardsList, sortedGames.slice(0, notesOnPage));
 
-        renderList(cardsList, sortedGames);
         resetButton.style.display = "block";
         resetButton.addEventListener("click", handleBtnReset);
 }
 
 filterSearchBoxView.addEventListener("change", handleSortCards);
 
+function displayDefaultGames () {
+    if(cards.length === 0){
+        cards.push(DEFAULTGAMES);
+        localStorage.setItem("cards", JSON.stringify(cards));
+    }
+}
+
+window.addEventListener('load', function() {
+    displayDefaultGames();
+});
+
 window.addEventListener("DOMContentLoaded", () =>{
-    // renderList(cardsList, cards, "content__grid");
+    displayDefaultGames();
     checkEmptyGames();
     pagination();
 });
