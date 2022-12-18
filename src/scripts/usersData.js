@@ -77,6 +77,11 @@ const pagination = () =>{
     for(let i = 1; i <= amountElementOnPage; i++){
         const li = document.createElement("li");
         li.classList.add("pagination__list-btn");
+        li.classList.add("hidden");
+
+        if(USERS.length > notesOnPage){
+            li.classList.remove("hidden");
+        }
 
         const button = document.createElement("button");
         button.classList.add("pagination__list-btn-page");

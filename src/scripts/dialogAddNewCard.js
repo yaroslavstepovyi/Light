@@ -98,7 +98,7 @@ const contentGridList = document.querySelector(".content__grid__list");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
 let notesOnPage = 12;            
 
-const notesOfPageDevices = () =>{
+const handleNotesOnPageWith = () =>{
     if(body.clientWidth <= 1312){
         notesOnPage = 12;
     }
@@ -114,14 +114,19 @@ const notesOfPageDevices = () =>{
 }
 
 const pagination = () =>{
-    notesOfPageDevices();
-
+    handleNotesOnPageWith();
+    
     const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
 
     let items = [];
     for(let i = 1; i <= amountElementOnPage; i++){
         const li = document.createElement("li");
         li.classList.add("pagination__list-btn");
+        li.classList.add("hidden");
+
+        if(JSON.parse(localStorage.getItem('cards')).length > notesOnPage){
+            li.classList.remove("hidden");
+        }
 
         const button = document.createElement("button");
         button.classList.add("pagination__list-btn-page");
@@ -189,6 +194,7 @@ const handleAddNewGame = (e) =>{
     
     renderList(contentDivItem, addedCards);
     closeGameDialog();
+
     pagination();
 
     for(let i = 0; i <= paginationListBtn.length; i++){
@@ -201,7 +207,6 @@ addingFormBtn.addEventListener("click", handleAddNewGame);
 paginationList.style.display = "none";
 contentEmptyGames.style.display = "flex";
 filter.style.display = "none";
-
 const checkEmptyGames = () =>{
     const loggedUser = JSON.parse(localStorage.getItem("user"));
 

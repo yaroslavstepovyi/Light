@@ -5,7 +5,6 @@ const heroLeftBtnMail = document.querySelector(".hero__left-btn-mail")
 const handlegetItNowClicked = () =>{
     let newWindow = window.open('https://store.steampowered.com/', "_blank");
     newWindow.opener = null;
-    console.log("getItNowClicked");
 }
 
 experienceContentBtn.addEventListener("click", handlegetItNowClicked);
