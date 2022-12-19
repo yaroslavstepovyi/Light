@@ -397,6 +397,17 @@ body {
   transform: translateX(5px);
 }
 
+.authed__header__nav-menu-wrap a {
+  display: flex;
+  align-items: flex-start;
+  color: #f2f2f2;
+  transition: transform 0.5s;
+}
+
+.authed__header__nav-menu-wrap a:hover {
+  transform: translateX(5px);
+}
+
 /* filter */
 
 .filter__wrap {

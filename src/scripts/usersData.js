@@ -33,7 +33,7 @@ const renderItem = (user) =>{
         <td>${user.email}</td>
         <td>${user.role}</th>
         <td class="users__datas-user-action">
-            <button type="submit" class="users__btn-dots">
+            <button type="submit" class="users__btn-dots" data-id="${user.id}" data-name="${user.name}">
                 <img class="users__datas-dots" src="../../../Assets/icons/users-three-dots.svg" alt="">
             </button>
             <div class="role hidden">
@@ -132,38 +132,47 @@ const dialogRoleShow = () =>{
     const rightDelete = document.querySelectorAll(".role-delete");
     
     for(let elem in usersBtnDots){
-        usersBtnDots[elem].addEventListener("click", () =>{
-            role[elem].classList.toggle("hidden");
-            
-            if(userRole === "moderator"){
-                rightDelete[elem].classList.add("hidden");
-            }
+        const handleUsersBtnDots = () =>{
+                role[elem].classList.toggle("hidden");
+                
+                if(userRole === "moderator"){
+                    rightDelete[elem].classList.add("hidden");
+                }
+    
+                if(userRole === "user"){
+                    rightChangeRole[elem].classList.add("hidden");
+                    rightBlock[elem].classList.add("hidden");
+                    rightDelete[elem].classList.add("hidden");
+                }
+    
+                rightChangeRole[elem].addEventListener("click", function showRightRole(){
+                    console.log("change role:", "\n",
+                    "id:", userLogged.id, "name:", userLogged.name, "\n",
+                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                })
+    
+                rightBlock[elem].addEventListener("click", () => {     
+                    console.log("block:", "\n",
+                    "id:", userLogged.id, "name:", userLogged.name, "\n",
+                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                })
+    
+                rightDelete[elem].addEventListener("click", () => {
+                    console.log("delete:", "\n",
+                    "id:", userLogged.id, "name:", userLogged.name, "\n",
+                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                })
+    
+                rightSendEmail[elem].addEventListener("click", () => {
+                    console.log("send email:", "\n",
+                    "id:", userLogged.id, "name:", userLogged.name, "\n",
+                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                })
+    
+                backgroundTransparent.classList.toggle("hidden");
+        }
 
-            if(userRole === "user"){
-                rightChangeRole[elem].classList.add("hidden");
-                rightBlock[elem].classList.add("hidden");
-                rightDelete[elem].classList.add("hidden");
-            }
-
-            rightChangeRole[elem].addEventListener("click", function showRightRole(e){
-                console.log("change role:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:", "to-name:",);
-            })
-
-            rightBlock[elem].addEventListener("click", (e) => {     
-                console.log("block:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
-            })
-
-            rightDelete[elem].addEventListener("click", (e) => {
-                console.log("delete:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
-            })
-
-            rightSendEmail[elem].addEventListener("click", (e) => {
-                console.log("send email:", "from-id:", userLogged.id, "from-name:", userLogged.name, "to-id:" ,"to-name:",);
-            })
-
-            backgroundTransparent.classList.toggle("hidden");
-            
-            })        
+        usersBtnDots[elem].addEventListener("click", handleUsersBtnDots);       
 
         backgroundTransparent.addEventListener("click", () =>{
             backgroundTransparent.classList.add("hidden");

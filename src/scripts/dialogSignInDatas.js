@@ -7,7 +7,6 @@ const authedHeader = document.querySelector(".authed__header");
 const headerNavBtn = document.querySelector(".header__nav-btn");
 const backgroundBlur = document.querySelector(".background-blur");
 const logOutBtn = document.querySelector(".log-out-btn");
-const profileBtn = document.querySelector(".authed__header__nav-menu-btn");
 const userMenu = document.querySelector(".authed__header__nav-menu-wrap");
 const signInEmail = document.getElementById("sign-in-email");
 const signInPassword = document.getElementById("sign-in-password");
@@ -100,12 +99,6 @@ const handleLogOut = () =>{
 }
 
 logOutBtn.addEventListener("click", handleLogOut);
-
-const handleProfileBtn = () =>{
-    window.open('../Components/pages/Profile Page/profile.html', "_blank");
-}
-
-profileBtn.addEventListener("click", handleProfileBtn);
 
 const handleHeaderNavBtnMobileLogOut = () =>{
     localStorage.setItem("user", null);

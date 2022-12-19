@@ -5,7 +5,7 @@ const valuesRight = document.querySelector(".values__right-benefits");
 const renderItem = (benefit) =>{
     const divElement = document.createElement("div");
     divElement.classList.add("values__right-benefit");
-    divElement.style.width = "81px";
+    divElement.style.width = "110px";
 
     divElement.innerHTML = `
         <img
@@ -26,8 +26,8 @@ const renderList = (element, list) =>{
         divElement.style.display = "flex";
         divElement.style.flexWrap = "wrap";
         divElement.style.justifyContent = "space-between";
-        divElement.style.width = "172px";
-        divElement.style.gap = "10px";
+        divElement.style.width = "234px";
+        divElement.style.gap = "9px";
         
         return divElement;
     }, divElement);

@@ -395,6 +395,17 @@ body {
   transform: translateX(5px);
 }
 
+.authed__header__nav-menu-wrap a {
+  display: flex;
+  align-items: flex-start;
+  color: #f2f2f2;
+  transition: transform 0.5s;
+}
+
+.authed__header__nav-menu-wrap a:hover {
+  transform: translateX(5px);
+}
+
 /* hero */
 
 .hero {
@@ -565,7 +576,7 @@ body {
   max-width: 310px;
   gap: 28px;
   left: -8px;
-  bottom: 60px;
+  bottom: 42px;
 }
 
 .hero__right-headline {
@@ -932,14 +943,14 @@ body {
 }
 
 .values__right-benefits img {
-  width: 50px;
-  height: 40px;
+  width: 27px;
+  height: 27px;
 }
 
 .values__right-benefits p {
-  max-width: 81px;
+  max-width: 110px;
   font-weight: 600;
-  font-size: 9px;
+  font-size: 11px;
   line-height: 11px;
   color: #ffffff;
 }

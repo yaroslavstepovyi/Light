@@ -53,13 +53,4 @@ export const USERS =[{
     password: "123123",
     role: "admin",
 },
-{   id: "7",
-    img: "userOnline3",
-    name: "Volodymyr Zelsky",
-    country: "Ireland",
-    age: "43",
-    email: "GoogleBooble@gmail.com",
-    password: "123123",
-    role: "user",
-},
 ]
