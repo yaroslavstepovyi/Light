@@ -151,8 +151,8 @@ body {
   align-items: center;
   margin-top: 22px;
   margin-bottom: 32px;
-  margin-left: -16px;
-  margin-right: -16px;
+  margin-left: -12px;
+  margin-right: -12px;
   padding-left: 16px;
   padding-right: 16px;
   top: 0;
@@ -1549,7 +1549,6 @@ body {
   /* burger menu active */
 
   .header__nav-small {
-    /* position: relative;  */
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -65,6 +65,71 @@ const renderList = (element, list) =>{
 
 renderList(usersTableRowsList, USERS);
 
+const dialogRoleShow = () =>{
+    const userRole = JSON.parse(localStorage.getItem("user")).role;
+    const userLogged = JSON.parse(localStorage.getItem("user"));
+    const usersBtnDots = document.querySelectorAll(".users__btn-dots");
+    const role = document.querySelectorAll(".role");
+    const rightChangeRole = document.querySelectorAll(".role-change-role");
+    const rightSendEmail = document.querySelectorAll(".role-send-email");
+    const rightBlock = document.querySelectorAll(".role-block");
+    const rightDelete = document.querySelectorAll(".role-delete");
+    
+    for(let elem in usersBtnDots){
+        const handleUsersBtnDots = () =>{
+                role[elem].classList.toggle("hidden");
+                
+                if(userRole === "moderator"){
+                    rightDelete[elem].classList.add("hidden");
+                }
+    
+                if(userRole === "user"){
+                    rightChangeRole[elem].classList.add("hidden");
+                    rightBlock[elem].classList.add("hidden");
+                    rightDelete[elem].classList.add("hidden");
+                }
+
+                if(userLogged.id === usersBtnDots[elem].getAttribute("data-id")){
+                    backgroundTransparent.classList.toggle("hidden");
+                    return;
+                }else{
+                    rightChangeRole[elem].addEventListener("click", function showRightRole(){
+                        console.log("change role:", "\n",
+                        "id:", userLogged.id, "name:", userLogged.name, "\n",
+                        "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                    })
+        
+                    rightBlock[elem].addEventListener("click", () => { 
+                        console.log("block:", "\n",
+                        "id:", userLogged.id, "name:", userLogged.name, "\n",
+                        "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                    })
+        
+                    rightDelete[elem].addEventListener("click", () => {
+                        console.log("delete:", "\n",
+                        "id:", userLogged.id, "name:", userLogged.name, "\n",
+                        "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                    })
+        
+                    rightSendEmail[elem].addEventListener("click", () => {
+                        console.log("send email:", "\n",
+                        "id:", userLogged.id, "name:", userLogged.name, "\n",
+                        "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
+                    })
+                }
+    
+                backgroundTransparent.classList.toggle("hidden");
+        }
+
+        usersBtnDots[elem].addEventListener("click", handleUsersBtnDots);       
+
+        backgroundTransparent.addEventListener("click", () =>{
+            backgroundTransparent.classList.add("hidden");
+            role[elem].classList.add("hidden");
+        })
+    }
+}
+
 const usersDatasRow = document.querySelector(".users__datas-row");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
 let notesOnPage = 6;                                                                      
@@ -90,13 +155,14 @@ const pagination = () =>{
         paginationListBtns.appendChild(li);
         items.push(button);
     }
-
+    
     let active;
     showPage(items[0]);
 
     for(let item of items){
         item.addEventListener("click", function(){
             showPage(this);
+            dialogRoleShow();
         })
     }
 
@@ -112,74 +178,11 @@ const pagination = () =>{
         let start = (pageNum - 1) * notesOnPage;
         let end = start + notesOnPage;
         let notes = USERS.slice(start, end);
-    
+        
         usersDatasRow.innerHTML = "";
-    
-        renderList(usersTableRowsList, notes);      
+        
+        renderList(usersTableRowsList, notes);  
     }
-}
-
-pagination();
-
-const dialogRoleShow = () =>{
-    const userRole = JSON.parse(localStorage.getItem("user")).role;
-    const userLogged = JSON.parse(localStorage.getItem("user"));
-    const usersBtnDots = document.querySelectorAll(".users__btn-dots");
-    const role = document.querySelectorAll(".role");
-    const rightChangeRole = document.querySelectorAll(".role-change-role");
-    const rightSendEmail = document.querySelectorAll(".role-send-email");
-    const rightBlock = document.querySelectorAll(".role-block");
-    const rightDelete = document.querySelectorAll(".role-delete");
-    
-    for(let elem in usersBtnDots){
-        const handleUsersBtnDots = () =>{
-                role[elem].classList.toggle("hidden");
-                
-                if(userRole === "moderator"){
-                    rightDelete[elem].classList.add("hidden");
-                }
-    
-                if(userRole === "user"){
-                    rightChangeRole[elem].classList.add("hidden");
-                    rightBlock[elem].classList.add("hidden");
-                    rightDelete[elem].classList.add("hidden");
-                }
-    
-                rightChangeRole[elem].addEventListener("click", function showRightRole(){
-                    console.log("change role:", "\n",
-                    "id:", userLogged.id, "name:", userLogged.name, "\n",
-                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
-                })
-    
-                rightBlock[elem].addEventListener("click", () => {     
-                    console.log("block:", "\n",
-                    "id:", userLogged.id, "name:", userLogged.name, "\n",
-                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
-                })
-    
-                rightDelete[elem].addEventListener("click", () => {
-                    console.log("delete:", "\n",
-                    "id:", userLogged.id, "name:", userLogged.name, "\n",
-                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
-                })
-    
-                rightSendEmail[elem].addEventListener("click", () => {
-                    console.log("send email:", "\n",
-                    "id:", userLogged.id, "name:", userLogged.name, "\n",
-                    "id:", usersBtnDots[elem].getAttribute("data-id"), "name:", usersBtnDots[elem].getAttribute("data-name"));
-                })
-    
-                backgroundTransparent.classList.toggle("hidden");
-        }
-
-        usersBtnDots[elem].addEventListener("click", handleUsersBtnDots);       
-
-        backgroundTransparent.addEventListener("click", () =>{
-            backgroundTransparent.classList.add("hidden");
-            role[elem].classList.add("hidden");
-        })
-    }
-
 }
 
 //default users order:
@@ -188,6 +191,7 @@ const handleBtnReset = () =>{
     selectId.value = "default";
     
     renderList(usersTableRowsList, initialUsers.slice(0, notesOnPage));
+    dialogRoleShow ();
 }
 
 //sort:
@@ -211,11 +215,13 @@ const handleRoleSelect = (e) =>{
     }
     
     renderList(usersTableRowsList, sortedUsers.slice(0, notesOnPage));
-    
     resetButton.addEventListener("click", handleBtnReset);
+    dialogRoleShow ();
 }
 
 usersFilterSearchSelect.addEventListener("change", handleRoleSelect);
 
-dialogRoleShow ();
+pagination();
+
+dialogRoleShow();
 

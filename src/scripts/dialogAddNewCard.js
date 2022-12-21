@@ -19,7 +19,7 @@ const filter = document.querySelector(".filter");
 
 
 const cards = JSON.parse(localStorage.getItem("cards")) || [];
-const authedUser = JSON.parse(localStorage.getItem('user')) || {name: "player name"};
+const authedUser = JSON.parse(localStorage.getItem('user')) || {name: "user name"};
 
 //render game card:
 const renderItem = (card) =>{
@@ -207,6 +207,7 @@ addingFormBtn.addEventListener("click", handleAddNewGame);
 paginationList.style.display = "none";
 contentEmptyGames.style.display = "flex";
 filter.style.display = "none";
+
 const checkEmptyGames = () =>{
     const loggedUser = JSON.parse(localStorage.getItem("user"));
 
