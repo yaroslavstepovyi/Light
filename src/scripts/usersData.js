@@ -6,6 +6,8 @@ const usersFilterSearchSelect = document.querySelector(".users__filter__search-s
 const resetButton = document.querySelector(".reset-button");
 const selectId = document.getElementById("select");
 const backgroundTransparent = document.querySelector(".background-transparent");
+const signInFormBtn = document.querySelector(".sign-in__form-btn");
+const logOutBtn = document.querySelector(".log-out-btn");
 
 
 const renderItem = (user) =>{
@@ -66,8 +68,8 @@ const renderList = (element, list) =>{
 renderList(usersTableRowsList, USERS);
 
 const dialogRoleShow = () =>{
-    const userRole = JSON.parse(localStorage.getItem("user")).role;
     const userLogged = JSON.parse(localStorage.getItem("user"));
+    const userRole = JSON.parse(localStorage.getItem("user")).role;
     const usersBtnDots = document.querySelectorAll(".users__btn-dots");
     const role = document.querySelectorAll(".role");
     const rightChangeRole = document.querySelectorAll(".role-change-role");
@@ -129,6 +131,21 @@ const dialogRoleShow = () =>{
         })
     }
 }
+
+const handleSignInFormBtn = () =>{
+    dialogRoleShow();
+}
+
+signInFormBtn.addEventListener("click", handleSignInFormBtn);
+
+const handleLogOutBtn = () =>{
+    const usersBtnDots = document.querySelectorAll(".users__btn-dots");
+    for(let elem in usersBtnDots){
+        usersBtnDots[elem].setAttribute("disabled", "");
+    }
+}
+
+logOutBtn.addEventListener("click", handleLogOutBtn);
 
 const usersDatasRow = document.querySelector(".users__datas-row");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
@@ -222,6 +239,8 @@ const handleRoleSelect = (e) =>{
 usersFilterSearchSelect.addEventListener("change", handleRoleSelect);
 
 pagination();
-
 dialogRoleShow();
+
+
+
 

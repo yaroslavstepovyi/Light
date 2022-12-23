@@ -640,7 +640,6 @@ body {
 
 .pagination__list {
   margin-top: 36px;
-  margin-bottom: 37px;
 }
 
 .pagination__list ul {
@@ -662,7 +661,6 @@ body {
   width: 32px;
   height: 32px;
   background: #ffffff;
-  /* border: 1px solid #dfe3e8; */
   border-radius: 4px;
   font-style: normal;
   font-weight: 700;
@@ -709,6 +707,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 37px;
   width: 100%;
   background-image: url(../../../Assets/images/footer-bgr.png);
   mix-blend-mode: difference;
@@ -871,6 +870,7 @@ body {
 }
 
 @media (max-width: 921px) {
+  
   .container {
     padding: 12px 12px;
   }
@@ -1036,7 +1036,6 @@ body {
 
   .pagination__list {
     margin-top: 24px;
-    margin-bottom: 21px;
   }
 
   .pagination__list-btn:first-child button {
@@ -1052,6 +1051,12 @@ body {
   .pagination__list ul {
     max-width: 247px;
     gap: 4px;
+  }
+
+  /* footer */
+
+  .footer__wrap{
+    margin-top: 24px;
   }
 }
 
@@ -1174,7 +1179,6 @@ body {
 
   .pagination__list {
     margin-top: 24px;
-    margin-bottom: 21px;
   }
 
   .pagination__list-btn:first-child button {
@@ -1199,6 +1203,7 @@ body {
   }
 
   .footer__wrap {
+    margin-top: 24px;
     background-image: url(../../../Assets/icons/footer-mobile.svg);
     mix-blend-mode: difference;
     border-radius: 8px;
@@ -1577,7 +1582,6 @@ body {
 
   .pagination__list {
     margin-top: 24px;
-    margin-bottom: 21px;
   }
 
   .pagination__list-btn button {
@@ -1597,6 +1601,7 @@ body {
   }
 
   .footer__wrap {
+    margin-top: 24px;
     background-image: url(../../../Assets/icons/footer-mobile.svg);
     mix-blend-mode: difference;
     border-radius: 8px;

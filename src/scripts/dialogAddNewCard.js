@@ -96,7 +96,7 @@ const closeGameDialog = () =>{
 
 const contentGridList = document.querySelector(".content__grid__list");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
-let notesOnPage = 12;            
+let notesOnPage = 2;            
 
 const handleNotesOnPageWith = () =>{
     if(body.clientWidth <= 1312){
@@ -114,7 +114,7 @@ const handleNotesOnPageWith = () =>{
 }
 
 const pagination = () =>{
-    handleNotesOnPageWith();
+    // handleNotesOnPageWith();
     
     const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
 

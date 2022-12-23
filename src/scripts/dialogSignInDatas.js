@@ -18,7 +18,7 @@ const headerNavBtnMobile = document.querySelector(".header__nav-btn-mobile");
 const headerNavBtnMobileLogOut = document.querySelector(".header__nav-btn-mobile__log-out");
 
 
-//switch empty games to filter and pagination
+//show and hide empty games, filter and pagination
 const checkEmptyGames = () =>{
     const loggedUser = JSON.parse(localStorage.getItem("user"));
     const gamesInLocalStorage = JSON.parse(localStorage.getItem("cards"));
