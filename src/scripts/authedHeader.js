@@ -4,7 +4,8 @@ const backgroundTransparent = document.querySelector(".background-transparent");
 
 const dialogAuthedHeader = () =>{
     authedHeaderNavMenuWrap.style.boxShadow = "0px 0px 10px #bc3cd8";    
-    authedHeaderNavMenuWrap.style.right = "10px";    
+    authedHeaderNavMenuWrap.style.right = "20px";    
+    authedHeaderNavMenuWrap.style.top = "80px";    
     authedHeaderNavMenuWrap.style.zIndex = "100";    
 }
 

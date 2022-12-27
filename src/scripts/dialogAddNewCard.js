@@ -1,3 +1,4 @@
+//TODO: handleNotesOnPageWith change notesOnPage = 12, test version
 import { DEFAULTGAMES } from "../mocks/defaultGames.js";
 
 const body = document.querySelector("body");
@@ -72,12 +73,15 @@ export const renderList = (element, list) => {
 const handleClickCard = (card) =>{
     gameDialog.classList.remove("hidden");
     backgroundBlur.classList.remove("hidden-background-blur");
-  
+    body.style.overflow = "hidden";
+
     document.querySelector(".game-dialog__img").src = `../../Assets/images/Games/${card.img}.png`;
     document.querySelector(".game-dialog__game-name").innerHTML = card.name;
     document.querySelector(".game-dialog__game-description").innerHTML = card.description;
     document.querySelector(".game-dialog__user-name").innerHTML = authedUser.name;
     document.querySelector(".game-dialog__user-review").innerHTML = card.review;
+
+    document.querySelector(".game-dialog__game-name").style.fontSize = "18px";
 }
 
 const resetInputsField = () =>{
@@ -97,6 +101,7 @@ const closeGameDialog = () =>{
 const contentGridList = document.querySelector(".content__grid__list");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
 let notesOnPage = 2;            
+const displayPages = 5;
 
 const handleNotesOnPageWith = () =>{
     if(body.clientWidth <= 1312){
@@ -113,13 +118,36 @@ const handleNotesOnPageWith = () =>{
     }
 }
 
+//TODO: add < > buttons and max render buttons = 5
 const pagination = () =>{
-    // handleNotesOnPageWith();
     
+    // handleNotesOnPageWith();
+    let page = 1;
+    let active;    
+    let items = [];
     const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
 
-    let items = [];
-    for(let i = 1; i <= amountElementOnPage; i++){
+    let maxLeft = page - Math.floor(displayPages / 2);
+    let maxRight = page + Math.floor(displayPages / 2);
+    
+    if(maxLeft < 1){
+        maxLeft = 1;
+        maxRight = displayPages;
+    }
+    
+    if(maxRight > amountElementOnPage){
+        maxLeft = amountElementOnPage - (displayPages - 1);
+        maxRight = amountElementOnPage;
+        
+        if(maxLeft < 1){
+            maxLeft = 1;
+        }
+    }
+    
+    console.log("maxleft", maxLeft);
+    console.log("maxright", maxRight);
+
+    for(let i = maxLeft; i <= maxRight; i++ ){
         const li = document.createElement("li");
         li.classList.add("pagination__list-btn");
         li.classList.add("hidden");
@@ -137,15 +165,6 @@ const pagination = () =>{
         items.push(button);
     }
 
-    let active;
-    showPage(items[0]);
-
-    for(let item of items){
-        item.addEventListener("click", function(){
-            showPage(this);
-        })
-    }
-
     function showPage(elem) {
         if(active){
             active.classList.remove("active");
@@ -153,16 +172,25 @@ const pagination = () =>{
         
         active = elem;
         elem.classList.add("active");
-    
+        
         let pageNum = +elem.innerHTML;
         let start = (pageNum - 1) * notesOnPage;
         let end = start + notesOnPage;
         let notes = JSON.parse(localStorage.getItem('cards')).slice(start, end);
-    
+        
         contentGridList.innerHTML = "";
-    
+        
         renderList(cardsList, notes); 
-    }    
+    } 
+
+    showPage(items[0]);
+
+    for(let item of items){
+        item.addEventListener("click", function(){
+            page = +item.innerHTML;
+            showPage(this);
+        })
+    }   
 }
 
 const handleAddNewGame = (e) =>{
@@ -198,7 +226,7 @@ const handleAddNewGame = (e) =>{
     pagination();
 
     for(let i = 0; i <= paginationListBtn.length; i++){
-        paginationListBtn[i].innerHTML = "";
+        paginationListBtn[i].remove();
     }
 }
 addingFormBtn.addEventListener("click", handleAddNewGame);

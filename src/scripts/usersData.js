@@ -133,7 +133,10 @@ const dialogRoleShow = () =>{
 }
 
 const handleSignInFormBtn = () =>{
-    dialogRoleShow();
+    const usersBtnDots = document.querySelectorAll(".users__btn-dots");
+    for(let elem in usersBtnDots){
+        usersBtnDots[elem].removeAttribute("disabled", "");
+    }
 }
 
 signInFormBtn.addEventListener("click", handleSignInFormBtn);
