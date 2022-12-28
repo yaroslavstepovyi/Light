@@ -100,43 +100,46 @@ const closeGameDialog = () =>{
 
 const contentGridList = document.querySelector(".content__grid__list");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
-let notesOnPage = 2;            
-const displayPages = 5;
+let state = {
+    "notesOnPage": 2,
+    "page": 1,
+    "displayPages": 5,
+}
 
 const handleNotesOnPageWith = () =>{
     if(body.clientWidth <= 1312){
-        notesOnPage = 12;
+        state.notesOnPage = 12;
     }
     if(body.clientWidth <= 1200){
-        notesOnPage = 9;
+        state.notesOnPage = 9;
     }
     if(body.clientWidth <= 921){
-        notesOnPage = 6;
+        state.notesOnPage = 6;
     }
     if(body.clientWidth < 576){
-        notesOnPage = 4;
+        state.notesOnPage = 4;
     }
 }
 
-//TODO: add < > buttons and max render buttons = 5
+//TODO: add < > buttons 
 const pagination = () =>{
     
     // handleNotesOnPageWith();
-    let page = 1;
+    
     let active;    
     let items = [];
-    const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / notesOnPage);
+    const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / state.notesOnPage);
 
-    let maxLeft = page - Math.floor(displayPages / 2);
-    let maxRight = page + Math.floor(displayPages / 2);
+    let maxLeft = state.page - Math.floor(state.displayPages / 2);
+    let maxRight = state.page + Math.floor(state.displayPages / 2);
     
     if(maxLeft < 1){
         maxLeft = 1;
-        maxRight = displayPages;
+        maxRight = state.displayPages;
     }
     
     if(maxRight > amountElementOnPage){
-        maxLeft = amountElementOnPage - (displayPages - 1);
+        maxLeft = amountElementOnPage - (state.displayPages - 1);
         maxRight = amountElementOnPage;
         
         if(maxLeft < 1){
@@ -152,7 +155,7 @@ const pagination = () =>{
         li.classList.add("pagination__list-btn");
         li.classList.add("hidden");
 
-        if(JSON.parse(localStorage.getItem('cards')).length > notesOnPage){
+        if(JSON.parse(localStorage.getItem('cards')).length > state.notesOnPage){
             li.classList.remove("hidden");
         }
 
@@ -174,8 +177,8 @@ const pagination = () =>{
         elem.classList.add("active");
         
         let pageNum = +elem.innerHTML;
-        let start = (pageNum - 1) * notesOnPage;
-        let end = start + notesOnPage;
+        let start = (pageNum - 1) * state.notesOnPage;
+        let end = start + state.notesOnPage;
         let notes = JSON.parse(localStorage.getItem('cards')).slice(start, end);
         
         contentGridList.innerHTML = "";
@@ -187,10 +190,11 @@ const pagination = () =>{
 
     for(let item of items){
         item.addEventListener("click", function(){
-            page = +item.innerHTML;
+            state.page = +this.innerHTML;
+            console.log("state.page=", state.page);
             showPage(this);
         })
-    }   
+    }       
 }
 
 const handleAddNewGame = (e) =>{
