@@ -101,7 +101,7 @@ const closeGameDialog = () =>{
 const contentGridList = document.querySelector(".content__grid__list");
 const paginationListBtns = document.querySelector(".pagination__list-btns");
 let state = {
-    "notesOnPage": 2,
+    "notesOnPage": 12,
     "page": 1,
     "displayPages": 5,
 }
@@ -124,33 +124,33 @@ const handleNotesOnPageWith = () =>{
 //TODO: add < > buttons 
 const pagination = () =>{
     
-    // handleNotesOnPageWith();
+    handleNotesOnPageWith();
     
     let active;    
     let items = [];
     const amountElementOnPage = Math.ceil(JSON.parse(localStorage.getItem('cards')).length / state.notesOnPage);
 
-    let maxLeft = state.page - Math.floor(state.displayPages / 2);
-    let maxRight = state.page + Math.floor(state.displayPages / 2);
+    // let maxLeft = state.page - Math.floor(state.displayPages / 2);
+    // let maxRight = state.page + Math.floor(state.displayPages / 2);
     
-    if(maxLeft < 1){
-        maxLeft = 1;
-        maxRight = state.displayPages;
-    }
+    // if(maxLeft < 1){
+    //     maxLeft = 1;
+    //     maxRight = state.displayPages;
+    // }
     
-    if(maxRight > amountElementOnPage){
-        maxLeft = amountElementOnPage - (state.displayPages - 1);
-        maxRight = amountElementOnPage;
+    // if(maxRight > amountElementOnPage){
+    //     maxLeft = amountElementOnPage - (state.displayPages - 1);
+    //     maxRight = amountElementOnPage;
         
-        if(maxLeft < 1){
-            maxLeft = 1;
-        }
-    }
+    //     if(maxLeft < 1){
+    //         maxLeft = 1;
+    //     }
+    // }
     
-    console.log("maxleft", maxLeft);
-    console.log("maxright", maxRight);
+    // console.log("maxleft", maxLeft);
+    // console.log("maxright", maxRight);
 
-    for(let i = maxLeft; i <= maxRight; i++ ){
+    for(let i = 1; i <= amountElementOnPage; i++ ){
         const li = document.createElement("li");
         li.classList.add("pagination__list-btn");
         li.classList.add("hidden");
@@ -190,8 +190,8 @@ const pagination = () =>{
 
     for(let item of items){
         item.addEventListener("click", function(){
-            state.page = +this.innerHTML;
-            console.log("state.page=", state.page);
+            // state.page = +this.innerHTML;
+            // console.log("state.page=", state.page);
             showPage(this);
         })
     }       
