@@ -1188,9 +1188,11 @@ body {
 }
 
 @media (max-width: 921px) {
+
   .content__grid {
     max-width: 290px;
   }
+  
   /* header */
 
   .header {

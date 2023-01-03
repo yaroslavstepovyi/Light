@@ -1021,7 +1021,7 @@ body {
   }
 
   ::-webkit-scrollbar {
-    width: 132px;
+    width: 4px;
     height: 8px;
     background: #c993d4;
     border-radius: 4px;
@@ -1164,7 +1164,6 @@ body {
   }
 
   ::-webkit-scrollbar {
-    width: 132px;
     height: 8px;
     background: #c993d4;
     border-radius: 4px;
@@ -1567,7 +1566,6 @@ body {
   }
 
   ::-webkit-scrollbar {
-    width: 132px;
     height: 8px;
     background: #c993d4;
     border-radius: 4px;
